@@ -121,7 +121,6 @@
                         </p>
                         <div class="dashboard__card-details" id="ecDetails">
                             <p><strong>Salinity:</strong> <span id="ecSalinity">0.5 ppt</span></p>
-                            <p><strong>TDS:</strong> <span id="ecTDS">750 ppm</span></p>
                         </div>
                     </div>
     
@@ -129,7 +128,7 @@
                     <div class="dashboard__card" id="lightSensor" onclick="showDetails('lightSensor')">
                         <h3 class="dashboard__card-title">Light Intensity Sensor</h3>
                         <p class="dashboard__card-content">
-                            <strong>Light Level:</strong> <span id="lightLevel">1200 lux</span>
+                            <strong>Light Level:</strong> <span id="lightLevel">1200 ppfd</span>
                         </p>
                         <div class="dashboard__card-details" id="lightDetails">
                             <p><strong>UV Index:</strong> <span id="lightUV">3</span></p>
@@ -163,13 +162,13 @@
     
                     <!-- Dissolved Oxygen Sensor -->
                     <div class="dashboard__card" id="doSensor" onclick="showDetails('doSensor')">
-                        <h3 class="dashboard__card-title">Dissolved Oxygen Sensor</h3>
+                        <h3 class="dashboard__card-title">Total Dissolved Solids</h3>
                         <p class="dashboard__card-content">
-                            <strong>DO Level:</strong> <span id="doLevel">8.5 mg/L</span>
+                            <strong>PPM Level:</strong> <span id="doLevel">300</span>
                         </p>
                         <div class="dashboard__card-details" id="doDetails">
-                            <p><strong>Saturation:</strong> <span id="doSaturation">95%</span></p>
-                            <p><strong>Temperature:</strong> <span id="doTemp">22°C</span></p>
+                            <p><strong>min:</strong> <span id="doSaturation">550</span></p>
+                            <p><strong>max:</strong> <span id="doTemp">850</span></p>
                         </div>
                     </div>
     
@@ -184,7 +183,20 @@
                             <p><strong>Max:</strong> <span id="waterTempMax">22°C</span></p>
                         </div>
                     </div>
-                </section>
+            
+
+                <!-- Water Sensor -->
+                <div class="dashboard__card" id="waterLevSensor" onclick="showDetails('waterLevSensor')">
+                    <h3 class="dashboard__card-title">Water Level Sensor</h3>
+                    <p class="dashboard__card-content">
+                        <strong>Water Level:</strong> <span id="waterLevelValue">20%</span>
+                    </p>
+                    <div class="dashboard__card-details" id="waterTempDetails">
+                        <p><strong>Min water level:</strong> <span id="waterTempMin">40%</span></p>
+                        
+                    </div>
+                </div>
+            </section>
 
 <!-- Bottom Sections Container -->
 <div class="dashboard__bottom-container">
@@ -193,9 +205,15 @@
         <div class="dashboard__bottom-column">
             <div class="dashboard__card dashboard__card--large" id="graphsCard">
                 <h3 class="dashboard__card-title">SENSOR GRAPHS</h3>
-                <p class="dashboard__card-content">
-                    This section is dedicated to Grafana visualizations. Connect Grafana to your data source for real-time analytics.
-                </p>
+                <div class="grafana-container">
+                    <iframe id="grafanaFrame" 
+                        src="http://localhost:3000/d-solo/becswr8bew2rkf/test-dashboard?orgId=1&from=1740033751280&to=1740034051280&timezone=browser&refresh=5s&theme=dark&panelId=1&__feature.dashboardSceneSolo" 
+                        class="grafana-iframe">
+                    </iframe>
+                </div>
+                
+                <!-- Refresh Button -->
+                <button class="refresh-button" onclick="resetGrafana()">Reset Graph</button>
                 <canvas id="sensorChart"></canvas> <!-- Placeholder for a Chart.js graph -->
             </div>
         </div>
@@ -223,6 +241,7 @@
         setInterval(updateDateTime, 1000);
         updateDateTime();
     </script>
+
 
 </body>
 </html>
