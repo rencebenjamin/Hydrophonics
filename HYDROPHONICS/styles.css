@@ -1,17 +1,27 @@
-/* General Reset */
+
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
+.colors {
+    color: #24841b;
+    color: #64cb2c;
+    color: #347cac;
+    color: #3c9c04;
+    color: #2c44d2;
+    color: #4c74c4;
+    color: #9c5ceb;
+    color: white
+}
 /* Full Page Background */
 html, body {
     height: 100%;
     width: 100%;
     font-family: 'Arial', sans-serif;
     color: #0a180b;
-    background-color: #a1dba4;
+    background-color: #fff;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -69,14 +79,14 @@ html, body {
 }
 
 .dashboard__nav-link:hover {
-    color: #1abc9c;
+    color: #fff;
 }
 
 /* Main Content */
 .dashboard__main {
     flex: 1;
     padding: 20px;
-    background-color: rgba(129, 212, 161, 0.75); /* Adjusted transparency */
+    background-color:C6CAB3; /* Adjusted transparency */
 }
 
 /* Header */
@@ -90,7 +100,7 @@ html, body {
 /* Greeting Text */
 .dashboard__greeting {
     font-size: 1.5rem;
-    color: #2c3e50;
+    color: #9c5ceb;
 }
 
 /* Profile Section */
@@ -122,7 +132,7 @@ html, body {
 .dashboard__card {
     width: 150px; /* Set small card width */
     height: 300px; /* Set small card height */
-    background-color: rgba(188, 231, 207, 0.7); /* Adjusted transparency */
+    background-color: #24841b; /* Adjusted transparency */
     padding: 10px;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -162,7 +172,7 @@ html, body {
 
 .dashboard__card-content {
     font-size: 0.8rem; /* Smaller text */
-    color: #073011;
+    color: #7C735F;
     text-align: center;
 
 }
