@@ -196,5 +196,12 @@ function updateDoSensorData() {
     doSaturation.textContent = `${randomSaturation}%`;
     doTemp.textContent = `${randomTemp}°C`;
 }
-
+function resetGrafana() {
+    var iframe = document.getElementById("grafanaFrame");
+    var src = iframe.src; 
+    iframe.src = ""; // Clear first to force refresh
+    setTimeout(() => {
+        iframe.src = src; // Reload original URL
+    }, 100);
+}
 // Function to simulate Water Temperature sensor data
