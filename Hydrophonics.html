@@ -1,0 +1,196 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sensor Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="C:\Users\jeff\Desktop\prometheus-3.1.0.windows-amd64\img\11.png">
+
+      
+</head>
+<body>
+
+    <!-- Left-Aligned Top Navigation Menu -->
+    <nav class="dashboard__nav">
+    
+        <a href="#hydroponics"><img src = "C:\Users\jeff\Desktop\prometheus-3.1.0.windows-amd64\img\11.png" class="logo"></a>
+        <h2 class="dashboard__nav-title"><a href="#hydroponics">Hydroponics</a></h2>
+        <h2 class="dashboard__nav-item"><a href="#overview">Overview</a></h2>
+        <h2 class="dashboard__nav-item"><a href="#analytics">Analytics</a></h2>
+        <h2 class="dashboard__nav-item"><a href="#reports">Reports</a></h2>
+        <h2 class="dashboard__nav-item"><a href="#settings">Settings</a></h2>
+       
+        <div class="dashboard__datetime" id="dateTime"></div> 
+        <script>
+            function updateDateTime() {
+                const now = new Date();
+                document.getElementById("dateTime").textContent = now.toLocaleString();
+            }
+    
+            setInterval(updateDateTime, 1000);
+            updateDateTime();
+        </script>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="dashboard__main">
+        <header class="dashboard__header">
+            <h1 class="dashboard__greeting"></h1>
+            <h1 class="dashboard__greeting">Welcome Arkkun Tarub!!!</h1>
+            <div class="dashboard__profile">
+                <img src="C:\Users\jeff\Desktop\prometheus-3.1.0.windows-amd64\img\user.png" alt="User Profile" class="dashboard__profile-img">
+                <span class="dashboard__profile-name">User</span>
+            </div>
+        </header>
+
+                <!-- Cards Section -->
+                <section class="dashboard__cards">
+                    <!-- pH Sensor -->
+                    <div class="dashboard__card" id="phSensor" onclick="showDetails('phSensor')">
+                        <h3 class="dashboard__card-title">pH Sensor</h3>
+                        <p class="dashboard__card-content">
+                            <strong>pH Level:</strong> <span id="phLevel">7.2</span>
+                        </p>
+                        <div class="dashboard__card-details" id="phDetails">
+                            <p><strong>Nitrogen:</strong> <span id="phNitrogen">50 ppm</span></p>
+                            <p><strong>Phosphorus:</strong> <span id="phPhosphorus">30 ppm</span></p>
+                            <p><strong>Potassium:</strong> <span id="phPotassium">40 ppm</span></p>
+                        </div>
+                    </div>
+    
+                    <!-- EC Sensor -->
+                    <div class="dashboard__card" id="ecSensor" onclick="showDetails('ecSensor')">
+                        <h3 class="dashboard__card-title">EC Sensor</h3>
+                        <p class="dashboard__card-content">
+                            <strong>EC Level:</strong> <span id="ecLevel">1.5 mS/cm</span>
+                        </p>
+                        <div class="dashboard__card-details" id="ecDetails">
+                            <p><strong>Salinity:</strong> <span id="ecSalinity">0.5 ppt</span></p>
+                        </div>
+                    </div>
+    
+                    <!-- Light Intensity Sensor -->
+                    <div class="dashboard__card" id="lightSensor" onclick="showDetails('lightSensor')">
+                        <h3 class="dashboard__card-title">Light Intensity Sensor</h3>
+                        <p class="dashboard__card-content">
+                            <strong>Light Level:</strong> <span id="lightLevel">1200 ppfd</span>
+                        </p>
+                        <div class="dashboard__card-details" id="lightDetails">
+                            <p><strong>UV Index:</strong> <span id="lightUV">3</span></p>
+                            <p><strong>IR Level:</strong> <span id="lightIR">200 W/m²</span></p>
+                        </div>
+                    </div>
+    
+                    <!-- Temperature Sensor -->
+                    <div class="dashboard__card" id="tempSensor" onclick="showDetails('tempSensor')">
+                        <h3 class="dashboard__card-title">Temperature Sensor</h3>
+                        <p class="dashboard__card-content">
+                            <strong>Temperature:</strong> <span id="tempValue">25°C</span>
+                        </p>
+                        <div class="dashboard__card-details" id="tempDetails">
+                            <p><strong>Min:</strong> <span id="tempMin">20°C</span></p>
+                            <p><strong>Max:</strong> <span id="tempMax">30°C</span></p>
+                        </div>
+                    </div>
+    
+                    <!-- Humidity Sensor -->
+                    <div class="dashboard__card" id="humiditySensor" onclick="showDetails('humiditySensor')">
+                        <h3 class="dashboard__card-title">Humidity Sensor</h3>
+                        <p class="dashboard__card-content">
+                            <strong>Humidity:</strong> <span id="humidityValue">60%</span>
+                        </p>
+                        <div class="dashboard__card-details" id="humidityDetails">
+                            <p><strong>Dew Point:</strong> <span id="humidityDewPoint">18°C</span></p>
+                            <p><strong>Absolute Humidity:</strong> <span id="humidityAbsolute">10 g/m³</span></p>
+                        </div>
+                    </div>
+    
+                    <!-- Dissolved Oxygen Sensor -->
+                    <div class="dashboard__card" id="doSensor" onclick="showDetails('doSensor')">
+                        <h3 class="dashboard__card-title">Total Dissolved Solids</h3>
+                        <p class="dashboard__card-content">
+                            <strong>PPM Level:</strong> <span id="doLevel">300</span>
+                        </p>
+                        <div class="dashboard__card-details" id="doDetails">
+                            <p><strong>min:</strong> <span id="doSaturation">550</span></p>
+                            <p><strong>max:</strong> <span id="doTemp">850</span></p>
+                        </div>
+                    </div>
+    
+                    <!-- Water Temperature Sensor -->
+                    <div class="dashboard__card" id="waterTempSensor" onclick="showDetails('waterTempSensor')">
+                        <h3 class="dashboard__card-title">Water Temperature Sensor</h3>
+                        <p class="dashboard__card-content">
+                            <strong>Water Temp:</strong> <span id="waterTempValue">20°C</span>
+                        </p>
+                        <div class="dashboard__card-details" id="waterTempDetails">
+                            <p><strong>Min:</strong> <span id="waterTempMin">18°C</span></p>
+                            <p><strong>Max:</strong> <span id="waterTempMax">22°C</span></p>
+                        </div>
+                    </div>
+            
+
+                <!-- Water Sensor -->
+                <div class="dashboard__card" id="waterLevSensor" onclick="showDetails('waterLevSensor')">
+                    <h3 class="dashboard__card-title">Water Level Sensor</h3>
+                    <p class="dashboard__card-content">
+                        <strong>Water Level:</strong> <span id="waterLevelValue">20%</span>
+                    </p>
+                    <div class="dashboard__card-details" id="waterTempDetails">
+                        <p><strong>Min water level:</strong> <span id="waterTempMin">40%</span></p>
+                        
+                    </div>
+                </div>
+            </section>
+
+<!-- Bottom Sections Container -->
+<div class="dashboard__bottom-container">
+    <!-- Sensor Graphs Dashboard (First Row) -->
+    <section class="dashboard__bottom">
+        <div class="dashboard__bottom-column">
+            <div class="dashboard__grafana">
+            <!-- <div class="dashboard__card--large" id="graphsCard"> -->
+                <h3 class="dashboard__card-title">SENSOR GRAPHS</h3>
+                <div class="grafana-container">
+                    <iframe id="grafanaFrame" 
+                        src="http://localhost:3000/d-solo/becswr8bew2rkf/test-dashboard?orgId=1&from=1740116196107&to=1740116496107&timezone=browser&refresh=5s&theme=light&panelId=1&__feature.dashboardSceneSolo" width="450" height="200" frameborder="0" 
+                        class="grafana-iframe">
+                    </iframe>
+                </div>
+                
+                <!-- Refresh Button -->
+                <button class="refresh-button" onclick="resetGrafana()">Reset Graph</button>
+                <canvas id="sensorChart"></canvas> <!-- Placeholder for a Chart.js graph -->
+            <!-- </div> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Summary Card (Second Row) -->
+    <section class="dashboard__bottom">
+        <div class="dashboard__bottom-column">
+            <div class="dashboard__card dashboard__card--large" id="summaryCard">
+                <h3 class="dashboard__card-title">Summary</h3>
+                <p class="dashboard__card-content" id="summaryContent">Summary of all sensors will appear here.</p>
+            </div>
+        </div>
+    </section>
+</div>
+        </section>
+    </main>
+
+    <script>
+        function updateDateTime() {
+            const now = new Date();
+            document.getElementById("dateTime").textContent = now.toLocaleString();
+        }
+
+        setInterval(updateDateTime, 1000);
+        updateDateTime();
+    </script>
+
+
+</body>
+</html>
