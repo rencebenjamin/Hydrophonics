@@ -56,7 +56,7 @@ function updatePhSensorData() {
   phPotassium.textContent = `${randomPotassium} ppm`;
 }
 
-// Call this function periodically to simulate real-time
+// Call this function periodically to simulate real-time.
 
 setInterval(updatePhSensorData, 10000); // Update every 10 seconds
 // Function to show sensor details
