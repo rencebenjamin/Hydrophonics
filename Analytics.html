@@ -1,0 +1,200 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sensor Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="img\11.png">
+
+      
+</head>
+<body>
+
+    <!-- Left-Aligned Top Navigation Menu -->
+    <nav class="dashboard__nav">
+    
+        <a href="#hydroponics"><img src = "img\11.png" class="logo"></a>
+        <h2 class="dashboard__nav-title"><a href="Hydrophonics.html">Hydroponics</a></h2>
+        <h2 class="dashboard__nav-item"><a href="Hydrophonics.html">Overview</a></h2>
+        <h2 class="dashboard__nav-item"><a href="Analytics.html">Analytics</a></h2>
+        <h2 class="dashboard__nav-item"><a href="#reports">Reports</a></h2>
+        <h2 class="dashboard__nav-item"><a href="#settings">Settings</a></h2>
+       
+        <div class="dashboard__datetime" id="dateTime"></div> 
+        <script>
+            function updateDateTime() {
+                const now = new Date();
+                document.getElementById("dateTime").textContent = now.toLocaleString();
+            }
+    
+            setInterval(updateDateTime, 1000,);
+            updateDateTime();
+        </script>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="dashboard__main">
+        <header class="dashboard__header">
+            <h1 class="dashboard__greeting"></h1>
+            <h1 class="dashboard__greeting">REAL-TIME MONITORING AND PREDICTIONS</h1>
+            <h1 class="dashboard__greeting"></h1>
+        </header>
+        <header class="dashboard__header">
+            <h1 class="dashboard__greeting"></h1>
+            <div class="dashboard__card_today container" id="phSensor" onclick="showDetails('phSensor')">
+                <div class="row">
+                <h5>24</h5>
+                <h3 class="dashboard__card-title">MONDAY</h3>
+            </div>
+                <div class="row">
+            <br>
+                <p class="dashboard__card-content">
+                    <hr>
+                    <strong>Overall Status: </strong> <span id="phLevel">Normal</span>
+                </p>
+                <div class="dashboard__card-details" id="phDetails">
+                    <p><strong>pH Status:</strong> <span id="phNitrogen">Normal</span></p>
+                    <p><strong>EC Status:</strong> <span id="phPhosphorus">Normal</span></p>
+                    
+                </div>
+            </div>
+        </div>
+            <h1 class="dashboard__greeting"></h1>
+        </header>
+                <!-- pH Sensor -->
+                
+                <!-- Cards Section -->
+                <section class="dashboard__cards">
+                    
+    
+                    <!-- EC Sensor -->
+                    <div class="dashboard__card_small container" id="ecSensor" onclick="showDetails('ecSensor')">
+                        <div class="row">
+                            <h6>25</h6>
+                            <h3 class="dashboard__card-title">TUESDAY</h3>
+                    </div>
+                        <div class="row">
+                        <p class="dashboard__card-content">
+                            <hr>
+                            <strong>Overall Status: </strong> <span id="ecLevel">Normal</span>
+                        </p>
+                        <div class="dashboard__card-details" id="ecDetails">
+                            <p><strong>pH Status:</strong> <span id="phNitrogen">Normal</span></p>
+                            <p><strong>EC Status:</strong> <span id="phPhosphorus">Normal</span></p>
+                        </div>
+                    </div>
+                    </div>
+    
+                    <!-- Light Intensity Sensor -->
+                    <div class="dashboard__card_small container" id="lightSensor" onclick="showDetails('lightSensor')">
+                        <div class="row">
+                            <h6>26</h6>
+                            <h3 class="dashboard__card-title">WEDNESDAY</h3>
+                    </div>
+                        <div class="row">
+                        <p class="dashboard__card-content">
+                            <hr>
+                            <strong>Overall Status: </strong> <span id="ecLevel">Below Normal</span>
+                        </p>
+                        <div class="dashboard__card-details" id="lightDetails">
+                            <p><strong>pH Status:</strong> <span id="phNitrogen">Normal</span></p>
+                            <p><strong>EC Status:</strong> <span id="phPhosphorus">Below Normal</span></p>
+                        </div>
+                    </div>
+                    </div>
+    
+                    <!-- Temperature Sensor -->
+                    <div class="dashboard__card_small container" id="tempSensor" onclick="showDetails('tempSensor')">
+                        <div class="row">
+                            <h6>27</h6>
+                            <h3 class="dashboard__card-title">THURSDAY</h3>
+                    </div>
+                        <div class="row">
+                            <p class="dashboard__card-content">
+                                <hr>
+                                <strong>Overall Status: </strong> <span id="ecLevel">Below Normal</span>
+                            </p>
+                            <div class="dashboard__card-details" id="ecDetails">
+                                <p><strong>pH Status:</strong> <span id="phNitrogen">Below Normal</span></p>
+                                <p><strong>EC Status:</strong> <span id="phPhosphorus">Below Normal</span></p>
+                            </div>
+                    </div>
+                    </div>
+    
+                    <!-- Humidity Sensor -->
+                    <div class="dashboard__card_small container" id="humiditySensor" onclick="showDetails('humiditySensor')">
+                        <div class="row">
+                            <h6>28</h6>
+                            <h3 class="dashboard__card-title">FRIDAY</h3>
+                    </div>
+                        <div class="row">
+                            <p class="dashboard__card-content">
+                                <hr>
+                                <strong>Overall Status: </strong> <span id="ecLevel">Not Normal</span>
+                            </p>
+                            <div class="dashboard__card-details" id="ecDetails">
+                                <p><strong>pH Status:</strong> <span id="phNitrogen">Poor pH</span></p>
+                                <p><strong>EC Status:</strong> <span id="phPhosphorus">Poor EC</span></p>
+                            </div>
+                    </div>
+                    </div>
+    
+                    <!-- Dissolved Oxygen Sensor -->
+                    <div class="dashboard__card_small container" id="doSensor" onclick="showDetails('doSensor')">
+                        <div class="row">
+                            <h6>29</h6>
+                            <h3 class="dashboard__card-title">SATURDAY</h3>
+                        </div>
+                        <div class="row">
+                        <p class="dashboard__card-content">
+                            <hr>
+                            <strong>PPM Level:</strong> <span id="doLevel">300</span>
+                        </p>
+                        <div class="dashboard__card-details" id="doDetails">
+                            <p><strong>min:</strong> <span id="doSaturation">550</span></p>
+                            <p><strong>max:</strong> <span id="doTemp">850</span></p>
+                        </div>
+                    </div>
+                </div>
+    
+                    <!-- Water Temperature Sensor -->
+                    <div class="dashboard__card_small container" id="waterTempSensor" onclick="showDetails('waterTempSensor')">
+                        <div class="row">
+                            <h6>30</h6>
+                            <h3 class="dashboard__card-title">SUNDAY</h3>
+                        </div>
+                        <div class="row">
+                            
+                            <p class="dashboard__card-content">
+                                <hr>
+                                <strong>Water Temp:</strong> <span id="waterTempValue">20°C</span>
+                            </p>
+                            <div class="dashboard__card-details" id="waterTempDetails">
+                                <p><strong>Min:</strong> <span id="waterTempMin">18°C</span></p>
+                                <p><strong>Max:</strong> <span id="waterTempMax">22°C</span></p>
+                            </div>
+                        </div>
+                    </div>
+            
+
+                
+            </section>
+
+
+    </main>
+
+    <script>
+        function updateDateTime() {
+            const now = new Date();
+            document.getElementById("dateTime").textContent = now.toLocaleString();
+        }
+
+        setInterval(updateDateTime, 1000);
+        updateDateTime();
+    </script>
+
+
+</body>
+</html>
