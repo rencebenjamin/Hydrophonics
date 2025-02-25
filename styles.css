@@ -52,7 +52,7 @@
     display: flex;
     align-items: center;
     padding: 0px 20px;
-    background-color: #fbfbfb;
+    background-color: white;
     color: rgb(8, 23, 5);
     position: fixed;
     top: 0; 
@@ -249,6 +249,8 @@
   .container {
     display: flex;
     flex-direction: column;
+    margin: 0;
+    padding: 0;
   }
   
   .row {
@@ -274,6 +276,17 @@
   
   /* Hover Effect */
   .dashboard__card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .dashboard__card_small:hover {
+    
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  .dashboard__card_today:hover {
+    
     transform: translateY(-5px);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   }
@@ -441,6 +454,14 @@
       align-items: center;
       text-align: center;
       margin-bottom: 15px;
-      
-    
   }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* Two equal columns */
+    gap: 10px;
+}
+
+.grid-item {
+    padding: 20px;
+}
