@@ -208,4 +208,3 @@ function resetGrafana() {
   }, 100);
 }
 
-// Function to simulate Water Temperature sensor data

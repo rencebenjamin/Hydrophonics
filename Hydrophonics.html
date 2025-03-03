@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,29 +6,25 @@
     <title>Sensor Dashboard</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="img\11.png">
-
-      
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
     <!-- Left-Aligned Top Navigation Menu -->
     <nav class="dashboard__nav">
-    
-        <a href="#hydroponics"><img src = "img\11.png" class="logo"></a>
+        <a href="#hydroponics"><img src="img\11.png" class="logo"></a>
         <h2 class="dashboard__nav-title"><a href="Hydrophonics.html">Hydroponics</a></h2>
         <h2 class="dashboard__nav-item"><a href="Hydrophonics.html">Overview</a></h2>
         <h2 class="dashboard__nav-item"><a href="Analytics.html">Analytics</a></h2>
         <h2 class="dashboard__nav-item"><a href="#reports">Reports</a></h2>
         <h2 class="dashboard__nav-item"><a href="#settings">Settings</a></h2>
-       
-        <div class="dashboard__datetime" id="dateTime"></div> 
+        <div class="dashboard__datetime" id="dateTime"></div>
         <script>
             function updateDateTime() {
                 const now = new Date();
                 document.getElementById("dateTime").textContent = now.toLocaleString();
             }
-    
-            setInterval(updateDateTime, 1000,);
+            setInterval(updateDateTime, 1000);
             updateDateTime();
         </script>
     </nav>
@@ -37,176 +32,169 @@
     <!-- Main Content -->
     <main class="dashboard__main">
         <header class="dashboard__header">
-            <h1 class="dashboard__greeting"></h1>
             <h1 class="dashboard__greeting">REAL-TIME MONITORING AND PREDICTIONS</h1>
-            <h1 class="dashboard__greeting"></h1>
         </header>
 
-                <!-- Cards Section -->
-                <section class="dashboard__cards">
-                    <!-- pH Sensor -->
-                    <div class="dashboard__card container" id="phSensor" onclick="showDetails('phSensor')">
-                        <div class="row">
-                        <img src="img\ph.png" class="cards_logo">
-                        <h3 class="dashboard__card-title">pH Sensor</h3>
-                    </div>
-                        <div class="row2">
-                        <p class="dashboard__card-content">
-                            <strong>pH Level:</strong> <span id="phLevel">7.2</span>
-                        </p>
-                        <div class="dashboard__card-details" id="phDetails">
-                            <p><strong>Nitrogen:</strong> <span id="phNitrogen">50 ppm</span></p>
-                            <p><strong>Phosphorus:</strong> <span id="phPhosphorus">30 ppm</span></p>
-                            <p><strong>Potassium:</strong> <span id="phPotassium">40 ppm</span></p>
-                        </div>
-                    </div>
-                </div>
-    
-                    <!-- EC Sensor -->
-                    <div class="dashboard__card container" id="ecSensor" onclick="showDetails('ecSensor')">
-                        <div class="row">
-                        <img src="img\ecuador.png" class="cards_logo">
-                        <h3 class="dashboard__card-title">EC Sensor</h3>
-                    </div>
-                        <div class="row2">
-                        <p class="dashboard__card-content">
-                            <strong>EC Level:</strong> <span id="ecLevel">1.5 mS/cm</span>
-                        </p>
-                        <div class="dashboard__card-details" id="ecDetails">
-                            <p><strong>Salinity:</strong> <span id="ecSalinity">0.5 ppt</span></p>
-                            <p><strong>Ranges:</strong> <span id="ecSalinity">2.0 - 2.1 ms/cm</span></p>
-                            <p><strong>Status:</strong> <span id="ecSalinity">Normal</span></p>
-                        </div>
-                    </div>
-                    </div>
-    
-                    <!-- Light Intensity Sensor -->
-                    <div class="dashboard__card container" id="lightSensor" onclick="showDetails('lightSensor')">
-                        <div class="row">
-                        <img src="img\light.png" class="cards_logo">
-                        <h3 class="dashboard__card-title">Light Intensity Sensor</h3>
-                    </div>
-                        <div class="row2">
-                        <p class="dashboard__card-content">
-                            <strong>Light Level:</strong> <span id="lightLevel">1200 ppfd</span>
-                        </p>
-                        <div class="dashboard__card-details" id="lightDetails">
-                            <p><strong>UV Index:</strong> <span id="lightUV">3</span></p>
-                            <p><strong>IR Level:</strong> <span id="lightIR">200 W/m²</span></p>
-                        </div>
-                    </div>
-                    </div>
-    
-                    <!-- Temperature Sensor -->
-                    <div class="dashboard__card container" id="tempSensor" onclick="showDetails('tempSensor')">
-                        <div class="row">
-                        <img src="img\thermometer.png" class="cards_logo">
-                        <h3 class="dashboard__card-title">Temperature Sensor</h3>
-                    </div>
-                        <div class="row2">
-                        <p class="dashboard__card-content">
-                            <strong>Temperature:</strong> <span id="tempValue">25°C</span>
-                        </p>
-                        <div class="dashboard__card-details" id="tempDetails">
-                            <p><strong>Min:</strong> <span id="tempMin">20°C</span></p>
-                            <p><strong>Max:</strong> <span id="tempMax">30°C</span></p>
-                        </div>
-                    </div>
-                    </div>
-    
-                    <!-- Humidity Sensor -->
-                    <div class="dashboard__card container" id="humiditySensor" onclick="showDetails('humiditySensor')">
-                        <div class="row">
-                        <img src="img\humidity.png" class="cards_logo">
-                        <h3 class="dashboard__card-title">Humidity Sensor</h3>
-                    </div>
-                        <div class="row2">
-                        <p class="dashboard__card-content">
-                            <strong>Humidity:</strong> <span id="humidityValue">60%</span>
-                        </p>
-                        <div class="dashboard__card-details" id="humidityDetails">
-                            <p><strong>Dew Point:</strong> <span id="humidityDewPoint">18°C</span></p>
-                            <p><strong>Absolute Humidity:</strong> <span id="humidityAbsolute">10 g/m³</span></p>
-                        </div>
-                    </div>
-                    </div>
-    
-                    <!-- Dissolved Oxygen Sensor -->
-                    <div class="dashboard__card container" id="doSensor" onclick="showDetails('doSensor')">
-                        <div class="row">
-                        <img src="img\beaker-glass.png" class="cards_logo">
-                        <h3 class="dashboard__card-title">Total Dissolved Solids</h3>
-                        </div>
-                        <div class="row2">
-                        <p class="dashboard__card-content">
-                            <strong>PPM Level:</strong> <span id="doLevel">300</span>
-                        </p>
-                        <div class="dashboard__card-details" id="doDetails">
-                            <p><strong>min:</strong> <span id="doSaturation">550</span></p>
-                            <p><strong>max:</strong> <span id="doTemp">850</span></p>
-                        </div>
-                    </div>
-                </div>
-    
-                    <!-- Water Temperature Sensor -->
-                    <div class="dashboard__card container" id="waterTempSensor" onclick="showDetails('waterTempSensor')">
-                        <div class="row">
-                            <img src="img\water-temperature.png" class="cards_logo">
-                        <h3 class="dashboard__card-title">Water Temperature Sensor</h3>
-                        </div>
-                        <div class="row2">
-                            <p class="dashboard__card-content">
-                                <strong>Water Temp:</strong> <span id="waterTempValue">20°C</span>
-                            </p>
-                            <div class="dashboard__card-details" id="waterTempDetails">
-                                <p><strong>Min:</strong> <span id="waterTempMin">18°C</span></p>
-                                <p><strong>Max:</strong> <span id="waterTempMax">22°C</span></p>
-                            </div>
-                        </div>
-                    </div>
-            
+        <!-- <div class="chart-wrapper">
+            <canvas id="pHSensor" class="chart-container"></canvas>
+            <canvas id="ECSensor" class="chart-container"></canvas>
+            <canvas id="lightSensor" class="chart-container"></canvas>
+            <canvas id="tempSensor" class="chart-container"></canvas>
+            <canvas id="humiditySensor" class="chart-container"></canvas>
+            <canvas id="totalSolid" class="chart-container"></canvas>
+            <canvas id="waterTempSensor" class="chart-container"></canvas>
+            <canvas id="waterLvlSensor" class="chart-container"></canvas>
+        </div> -->
 
-                <!-- Water Sensor -->
-                <div class="dashboard__card container" id="waterLevSensor" onclick="showDetails('waterLevSensor')">
-                    <div class="row">
-                        <img src="img\water-level.png" class="cards_logo">
-                        <h3 class="dashboard__card-title">Water Level Sensor</h3>
+        <section class="dashboard__cards">
+            <!-- pH Sensor -->
+            <div class="dashboard__card container" id="phSensor" onclick="showDetails('phSensor')">
+                <div class="row2">
+                    <p class="dashboard__card-content">
+                        <canvas id="pHSensor" class="chart-container"></canvas>
+                    </p>
+                    <div class="dashboard__card-details" id="phDetails"></div>
+                </div>
+                <div class="row">
+                    <img src="img/ph.png" class="cards_logo">
+                    <h3 class="dashboard__card-title">pH Sensor</h3>
+                </div>
+            </div>
+
+            <!-- EC Sensor -->
+            <div class="dashboard__card container" id="ecSensor" onclick="showDetails('ecSensor')">
+                <div class="row2">
+                    <p class="dashboard__card-content">
+                        <canvas id="ECSensor" class="chart-container"></canvas>
+                    </p>
+                    <div class="dashboard__card-details" id="ecDetails"></div>
+                </div>
+                <div class="row">
+                    <img src="img/ecuador.png" class="cards_logo">
+                    <h3 class="dashboard__card-title">EC Sensor</h3>
+                </div>
+            </div>
+
+            <!-- Light Intensity Sensor -->
+            <div class="dashboard__card container" id="lightSensor" onclick="showDetails('lightSensor')">
+                <div class="row2">
+                    <p class="dashboard__card-content">
+                        <canvas id="lightSensor" class="chart-container"></canvas>
+                    </p>
+                    <div class="dashboard__card-details" id="ecDetails"></div>
+                </div>
+                <div class="row">
+                    <img src="img\light.png" class="cards_logo">
+                    <h3 class="dashboard__card-title">Light Intensity Sensor</h3>
+                </div>
+            </div>
+
+            <!-- Temperature Sensor -->
+            <div class="dashboard__card container" id="tempSensor" onclick="showDetails('tempSensor')">
+                <div class="row">
+                    <img src="img\thermometer.png" class="cards_logo">
+                    <h3 class="dashboard__card-title">Temperature Sensor</h3>
+                </div>
+                <div class="row2">
+                    <p class="dashboard__card-content">
+                        <strong>Temperature:</strong> <span id="tempValue">25°C</span>
+                    </p>
+                    <div class="dashboard__card-details" id="tempDetails">
+                        <p><strong>Min:</strong> <span id="tempMin">20°C</span></p>
+                        <p><strong>Max:</strong> <span id="tempMax">30°C</span></p>
                     </div>
-                    <div class="row2">
-                        <p class="dashboard__card-content">
-                            <strong>Water Level:</strong> <span id="waterLevelValue">20%</span>
-                        </p>
+                </div>
+            </div>
+
+            <!-- Humidity Sensor -->
+            <div class="dashboard__card container" id="humiditySensor" onclick="showDetails('humiditySensor')">
+                <div class="row">
+                    <img src="img\humidity.png" class="cards_logo">
+                    <h3 class="dashboard__card-title">Humidity Sensor</h3>
+                </div>
+                <div class="row2">
+                    <p class="dashboard__card-content">
+                        <strong>Humidity:</strong> <span id="humidityValue">60%</span>
+                    </p>
+                    <div class="dashboard__card-details" id="humidityDetails">
+                        <p><strong>Dew Point:</strong> <span id="humidityDewPoint">18°C</span></p>
+                        <p><strong>Absolute Humidity:</strong> <span id="humidityAbsolute">10 g/m³</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dissolved Oxygen Sensor -->
+            <div class="dashboard__card container" id="doSensor" onclick="showDetails('doSensor')">
+                <div class="row">
+                    <img src="img\beaker-glass.png" class="cards_logo">
+                    <h3 class="dashboard__card-title">Total Dissolved Solids</h3>
+                </div>
+                <div class="row2">
+                    <p class="dashboard__card-content">
+                        <strong>PPM Level:</strong> <span id="doLevel">300</span>
+                    </p>
+                    <div class="dashboard__card-details" id="doDetails">
+                        <p><strong>min:</strong> <span id="doSaturation">550</span></p>
+                        <p><strong>max:</strong> <span id="doTemp">850</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Water Temperature Sensor -->
+            <div class="dashboard__card container" id="waterTempSensor" onclick="showDetails('waterTempSensor')">
+                <div class="row">
+                    <img src="img\water-temperature.png" class="cards_logo">
+                    <h3 class="dashboard__card-title">Water Temperature Sensor</h3>
+                </div>
+                <div class="row2">
+                    <p class="dashboard__card-content">
+                        <strong>Water Temp:</strong> <span id="waterTempValue">20°C</span>
+                    </p>
+                    <div class="dashboard__card-details" id="waterTempDetails">
+                        <p><strong>Min:</strong> <span id="waterTempMin">18°C</span></p>
+                        <p><strong>Max:</strong> <span id="waterTempMax">22°C</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Water Sensor -->
+            <div class="dashboard__card container" id="waterLevSensor" onclick="showDetails('waterLevSensor')">
+                <div class="row">
+                    <img src="img\water-level.png" class="cards_logo">
+                    <h3 class="dashboard__card-title">Water Level Sensor</h3>
+                </div>
+                <div class="row2">
+                    <p class="dashboard__card-content">
+                        <strong>Water Level:</strong> <span id="waterLevelValue">20%</span>
+                    </p>
                     <div class="dashboard__card-details" id="waterTempDetails">
                         <p><strong>Min water level:</strong> <span id="waterTempMin">40%</span></p>
                     </div>
-                    </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
 <!-- Bottom Sections Container -->
 <div class="dashboard__bottom-container">
-    <!-- Sensor Graphs Dashboard (First Row) -->
+    <!-- Sensor Graphs Dashboard (First Column) -->
     <section class="dashboard__bottom">
         <div class="dashboard__bottom-column">
             <div class="dashboard__grafana">
-            <!-- <div class="dashboard__card--large" id="graphsCard"> -->
                 <h3 class="dashboard__card-title">SENSOR GRAPHS</h3>
                 <div class="grafana-container">
                     <iframe id="grafanaFrame" 
-                        src="http://localhost:3000/d-solo/becswr8bew2rkf/test-dashboard?orgId=1&from=1740116196107&to=1740116496107&timezone=browser&refresh=5s&theme=light&panelId=1&__feature.dashboardSceneSolo" width="450" height="200" frameborder="0" 
+                        src="http://localhost:3000/d-solo/becswr8bew2rkf/test-dashboard?orgId=1&from=1740116196107&to=1740116496107&timezone=browser&refresh=5s&theme=light&panelId=1&__feature.dashboardSceneSolo" 
+                        width="450" height="200" frameborder="0" 
                         class="grafana-iframe">
                     </iframe>
                 </div>
-                
                 <!-- Refresh Button -->
                 <button class="refresh-button" onclick="resetGrafana()">Reset Graph</button>
-                <canvas id="sensorChart"></canvas> <!-- Placeholder for a Chart.js graph -->
-            <!-- </div> -->
             </div>
         </div>
     </section>
 
-    <!-- Summary Card (Second Row) -->
+    <!-- Summary Card (Second Column) -->
     <section class="dashboard__bottom">
         <div class="dashboard__bottom-column">
             <div class="dashboard__card dashboard__card--large" id="summaryCard">
@@ -216,7 +204,6 @@
         </div>
     </section>
 </div>
-        </section>
     </main>
 
     <script>
@@ -227,8 +214,67 @@
 
         setInterval(updateDateTime, 1000);
         updateDateTime();
+
+function createChart(canvasId, percentage) {
+    const canvas = document.getElementById(canvasId);
+    if (!canvas) {
+        console.error(`Canvas ID '${canvasId}' not found!`);
+        return;
+    }
+
+    const ctx = canvas.getContext('2d');
+
+    return new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            datasets: [{
+                data: [percentage, 100 - percentage], // Percentage value
+                backgroundColor: ['#36A2EB', '#E5E7EB'], // Blue for actual value, Light Gray for remaining
+                borderWidth: 0
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            cutout: '80%', // Controls doughnut size
+            plugins: {
+                legend: { display: false },
+                tooltip: { enabled: false }
+            }
+        },
+        plugins: [{
+            afterDraw: function(chart) {
+                const { width, height, ctx } = chart;
+
+                ctx.restore();
+                const fontSize = (height / 6).toFixed(2);
+                ctx.font = fontSize + "px Arial";
+                ctx.textBaseline = "middle";
+
+                const text = percentage + "%",
+                      textX = Math.round((width - ctx.measureText(text).width) / 2),
+                      textY = height / 2;
+
+                ctx.fillStyle = "#3D4852";
+                ctx.fillText(text, textX, textY);
+                ctx.save();
+            }
+        }]
+    });
+}
+
+// Initialize Charts with Correct IDs and Values (Ensure IDs exist in HTML)
+const charts = {
+  pHSensor: createChart('pHSensor', 60),  // Replace with actual % values
+  ECSensor: createChart('ECSensor', 75),
+  lightSensor: createChart('lightSensor', 80),
+  tempSensor: createChart('tempSensor', 50),
+  humiditySensor: createChart('humiditySensor', 40),
+  totalSolid: createChart('totalSolid', 65),
+  waterTempSensor: createChart('waterTempSensor', 55),
+  waterLvlSensor: createChart('waterLvlSensor', 30)
+};
+
     </script>
-
-
 </body>
 </html>
