@@ -20,11 +20,16 @@
       <h2 class="dashboard__nav-item">
         <a href="Analytics.html">Analytics</a>
       </h2>
-      <h2 class="dashboard__nav-item"><a href="#reports">Reports</a></h2>
+      <h2 class="dashboard__nav-item">
+        <a href="reports.html">Reports</a>
+      </h2>
       <h2 class="dashboard__nav-item"><a href="#settings">Settings</a></h2>
 
       <div class="dashboard__datetime" id="dateTime"></div>
       <script>
+        function showDetails(day) {
+          window.location.href = `reports.html?day=${day}`;
+        }
         function updateDateTime() {
           const now = new Date();
           document.getElementById("dateTime").textContent =
@@ -49,8 +54,8 @@
         <h1 class="dashboard__greeting"></h1>
         <div
           class="dashboard__card_today grid-container"
-          id="phSensor"
-          onclick="showDetails('phSensor')"
+          id="Monday"
+          onclick="showDetails('Monday')"
         >
           <div class="grid-item" style="margin-right: -100px;">
             <h5 style="font-size: 125px;">24</h5>
@@ -83,8 +88,8 @@
         <!-- EC Sensor -->
         <div
           class="dashboard__card_small container"
-          id="ecSensor"
-          onclick="showDetails('ecSensor')"
+          id="Tuesday"
+          onclick="showDetails('Tuesday')"
         >
           <div class="row">
             <h6>25</h6>
@@ -115,8 +120,8 @@
         <!-- Light Intensity Sensor -->
         <div
           class="dashboard__card_small container"
-          id="lightSensor"
-          onclick="showDetails('lightSensor')"
+          id="Wednesday"
+          onclick="showDetails('Wednesday')"
         >
           <div class="row">
             <h6>26</h6>
@@ -148,8 +153,8 @@
         <!-- Temperature Sensor -->
         <div
           class="dashboard__card_small container"
-          id="tempSensor"
-          onclick="showDetails('tempSensor')"
+          id="Thursday"
+          onclick="showDetails('Thursday')"
         >
           <div class="row">
             <h6>27</h6>
@@ -182,8 +187,8 @@
         <!-- Humidity Sensor -->
         <div
           class="dashboard__card_small container"
-          id="humiditySensor"
-          onclick="showDetails('humiditySensor')"
+          id="Friday"
+          onclick="showDetails('Friday')"
         >
           <div class="row">
             <h6>28</h6>
@@ -215,8 +220,8 @@
         <!-- Dissolved Oxygen Sensor -->
         <div
           class="dashboard__card_small container"
-          id="doSensor"
-          onclick="showDetails('doSensor')"
+          id="Saturday"
+          onclick="showDetails('Saturday')"
         >
           <div class="row">
             <h6>29</h6>
@@ -242,8 +247,8 @@
         <!-- Water Temperature Sensor -->
         <div
           class="dashboard__card_small container"
-          id="waterTempSensor"
-          onclick="showDetails('waterTempSensor')"
+          id="Sunday"
+          onclick="showDetails('Sunday')"
         >
           <div class="row">
             <h6>30</h6>

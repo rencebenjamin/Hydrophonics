@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daily Sensor Details</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="img/11.png" />
+  </head>
+  <body>
+    <nav class="dashboard__nav">
+      <a href="index.html"><img src="img/11.png" class="logo" /></a>
+      <h2 class="dashboard__nav-title"><a href="Hydrophonics.html">Hydroponics</a></h2>
+      <h2 class="dashboard__nav-item"><a href="Hydrophonics.html">Overview</a></h2>
+      <h2 class="dashboard__nav-item"><a href="Analytics.html">Analytics</a></h2>
+      <h2 class="dashboard__nav-item"><a href="reports.html">Reports</a></h2>
+      <h2 class="dashboard__nav-item"><a href="#settings">Settings</a></h2>
+      <div class="dashboard__datetime" id="dateTime"></div>
+    </nav>
+
+    <main class="dashboard__main">
+      <header class="dashboard__header">
+        <h1 id="dayTitle">Sensor Data</h1>
+      </header>
+
+      <section class="dashboard__details">
+        <div id="sensorData"></div>
+      </section>
+    </main>
+
+    <script>
+      function getQueryParam(param) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(param);
+      }
+
+      function loadDayDetails() {
+        const day = getQueryParam("day") || "Unknown Day";
+        document.getElementById("dayTitle").textContent = day + " Sensor Data";
+
+        const sensorData = {
+          Monday: { ph: 6.5, ec: "Normal", light: "High", temp: "22°C", humidity: "60%", oxygen: "7.5 ppm", waterTemp: "20°C" },
+          Tuesday: { ph: 6.3, ec: "Below Normal", light: "Medium", temp: "21°C", humidity: "65%", oxygen: "7.2 ppm", waterTemp: "19°C" },
+          Wednesday: { ph: 6.8, ec: "Normal", light: "Low", temp: "23°C", humidity: "55%", oxygen: "7.8 ppm", waterTemp: "21°C" },
+          Thursday: { ph: 6.4, ec: "Normal", light: "High", temp: "22°C", humidity: "58%", oxygen: "7.6 ppm", waterTemp: "20°C" },
+          Friday: { ph: 6.2, ec: "Low", light: "Medium", temp: "21°C", humidity: "62%", oxygen: "7.1 ppm", waterTemp: "19°C" },
+          Saturday: { ph: 6.7, ec: "Normal", light: "High", temp: "24°C", humidity: "57%", oxygen: "7.9 ppm", waterTemp: "22°C" },
+          Sunday: { ph: 6.5, ec: "Normal", light: "Medium", temp: "22°C", humidity: "60%", oxygen: "7.4 ppm", waterTemp: "20°C" },
+        };
+
+        const data = sensorData[day] || {};
+        let detailsHTML = `
+          <p><strong>pH Level:</strong> ${data.ph || "N/A"}</p>
+          <p><strong>EC Status:</strong> ${data.ec || "N/A"}</p>
+          <p><strong>Light Intensity:</strong> ${data.light || "N/A"}</p>
+          <p><strong>Temperature:</strong> ${data.temp || "N/A"}</p>
+          <p><strong>Humidity:</strong> ${data.humidity || "N/A"}</p>
+          <p><strong>Dissolved Oxygen:</strong> ${data.oxygen || "N/A"}</p>
+          <p><strong>Water Temperature:</strong> ${data.waterTemp || "N/A"}</p>
+        `;
+
+        document.getElementById("sensorData").innerHTML = detailsHTML;
+      }
+
+      loadDayDetails();
+    </script>
+  </body>
+</html>
