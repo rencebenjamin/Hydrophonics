@@ -106,25 +106,6 @@ h6 {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Adjust Text for Small Cards */
-.dashboard__card-title {
-  font-size: 1rem; /* Smaller text */
-  /*margin-bottom: 20px;*/
-  color: #111909;
-  text-align: center;
-}
-
-.dashboard__card-content {
-  font-size: 0.8rem; /* Smaller text */
-  color: #eeffdc;
-  text-align: center;
-}
-.dashboard__card-details p {
-  font-size: 0.8rem; /* Unified font size */
-  color: #073011;
-  text-align: center;
-}
-
 /* Bottom Section */
 .dashboard__bottom {
   display: flex;
@@ -165,12 +146,6 @@ h6 {
   justify-content: center;
   align-items: center;
   text-align: center;
-}
-
-.cards_logo {
-  margin-top: 20px;
-  height: 50px;
-  width: auto;
 }
 
 /* Status Colors */

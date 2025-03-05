@@ -34,79 +34,78 @@
         <h1 class="text-2xl text-[#485935] font-semibold">REAL-TIME MONITORING AND PREDICTIONS</h1>
       </header>
 
-      <!-- <div class="chart-wrapper">
-        <canvas id="pHSensor" class="chart-container"></canvas>
-        <canvas id="ECSensor" class="chart-container"></canvas>
-        <canvas id="lightSensor" class="chart-container"></canvas>
-        <canvas id="tempSensor" class="chart-container"></canvas>
-        <canvas id="humiditySensor" class="chart-container"></canvas>
-        <canvas id="totalSolid" class="chart-container"></canvas>
-            <canvas id="waterTempSensor" class="chart-container"></canvas>
-            <canvas id="waterLvlSensor" class="chart-container"></canvas>
-        </div> -->
-
       <section class="dashboard__cards grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 max-w-[850px] mx-auto">
         <!-- pH Sensor -->
         <div
-          class="w-[200px] h-[300px] bg-[#93a267] p-2 rounded-lg shadow-md cursor-pointer transition-transform duration-300 flex flex-col justify-center items-center text-center hover:shadow-lg hover:scale-105"
+          class="w-[200px] h-[300px] bg-[#93a267] p-2 rounded-lg shadow-md cursor-pointer transition-transform duration-300 flex flex-col justify-between items-center text-center hover:shadow-lg hover:scale-105"
         >
-          <div class="row2">
-            <p class="dashboard__card-content">
-              <canvas id="phSensor" class="chart-container"></canvas>
-            </p>
-            <div class="dashboard__card-details" id="phDetails"></div>
+          <!-- Canvas Section -->
+          <div class="flex items-center justify-center w-full mt-4">
+            <canvas id="phSensor" class="chart-container max-w-full max-h-full"></canvas>
           </div>
-          <div class="row">
-            <img src="img/ph.png" class="cards_logo" />
-            <h3 class="dashboard__card-title">pH Sensor</h3>
+
+          <!-- Logo Section -->
+          <div class="flex items-center justify-center w-full">
+            <img src="img/ph.png" class="w-16 h-16" />
           </div>
+
+          <!-- Title Section -->
+          <h3 class="text-xl font-bold w-full -mt-2">pH Sensor</h3>
         </div>
 
         <!-- EC Sensor -->
         <div
-          class="w-[200px] h-[300px] bg-[#93a267] p-2 rounded-lg shadow-md cursor-pointer transition-transform duration-300 flex flex-col justify-center items-center text-center hover:shadow-lg hover:scale-105"
+          class="w-[200px] h-[300px] bg-[#93a267] p-2 rounded-lg shadow-md cursor-pointer transition-transform duration-300 flex flex-col justify-between items-center text-center hover:shadow-lg hover:scale-105"
         >
-          <div class="row2">
-            <p class="dashboard__card-content">
-              <canvas id="ecSensor" class="chart-container"></canvas>
-            </p>
-            <div class="dashboard__card-details" id="ecDetails"></div>
+          <!-- Canvas Section -->
+          <div class="flex items-center justify-center w-full mt-4">
+            <canvas id="ecSensor" class="chart-container max-w-full max-h-full"></canvas>
           </div>
-          <div class="row">
-            <img src="img/ecuador.png" class="cards_logo" />
-            <h3 class="dashboard__card-title">EC Sensor</h3>
+
+          <!-- Logo Section -->
+          <div class="flex items-center justify-center w-full">
+            <img src="img/ecuador.png" class="w-16 h-16" />
           </div>
+
+          <!-- Title Section -->
+          <h3 class="text-xl font-bold w-full -mt-2">EC Sensor</h3>
         </div>
 
         <!-- Light Intensity Sensor -->
         <div
-          class="w-[200px] h-[300px] bg-[#93a267] p-2 rounded-lg shadow-md cursor-pointer transition-transform duration-300 flex flex-col justify-center items-center text-center hover:shadow-lg hover:scale-105"
+          class="w-[200px] h-[300px] bg-[#93a267] p-2 rounded-lg shadow-md cursor-pointer transition-transform duration-300 flex flex-col justify-between items-center text-center hover:shadow-lg hover:scale-105"
         >
-          <div class="row2">
-            <p class="dashboard__card-content">
-              <canvas id="lightSensor" class="chart-container"></canvas>
-            </p>
-            <div class="dashboard__card-details" id="lightSensorDetails"></div>
+          <!-- Canvas Section -->
+          <div class="flex items-center justify-center w-full mt-4">
+            <canvas id="lightSensor" class="chart-container max-w-full max-h-full"></canvas>
           </div>
-          <div class="row">
-            <img src="img\light.png" class="cards_logo" />
-            <h3 class="dashboard__card-title">Light Intensity Sensor</h3>
+
+          <!-- Logo Section -->
+          <div class="flex items-center justify-center w-full">
+            <img src="img\light.png" class="w-16 h-16" />
           </div>
+
+          <!-- Title Section -->
+          <h3 class="text-base font-bold w-full -mt-2">Light Intensity Sensor</h3>
         </div>
 
         <!-- Temperature Sensor -->
         <div
-          class="w-[200px] h-[300px] bg-[#93a267] p-2 rounded-lg shadow-md cursor-pointer transition-transform duration-300 flex flex-col justify-center items-center text-center hover:shadow-lg hover:scale-105"
+          class="w-[200px] h-[300px] bg-[#93a267] p-2 rounded-lg shadow-md cursor-pointer transition-transform duration-300 flex flex-col justify-between items-center text-center hover:shadow-lg hover:scale-105"
         >
-          <div class="row2">
-            <p class="dashboard__card-content">
-              <canvas id="tempSensor" class="chart-container"></canvas>
-            </p>
-            <div class="row">
-              <img src="img\thermometer.png" class="cards_logo" />
-              <h3 class="dashboard__card-title">Temperature Sensor</h3>
-            </div>
+          <!-- Canvas Section -->
+          <div class="flex items-center justify-center w-full mt-4">
+            <canvas id="tempSensor" class="chart-container max-w-full max-h-full"></canvas>
           </div>
+          
+          <!-- Logo Section -->
+          <div class="flex items-center justify-center w-full">
+            <img src="img\thermometer.png" class="w-16 h-16 mr-6" />
+          </div>
+
+            <!-- Title Section -->
+          <h3 class="text-base font-bold w-full -mt-2">Temperature Sensor</h3>
+
         </div>
 
         <!-- Humidity Sensor -->
@@ -114,14 +113,14 @@
           class="w-[200px] h-[300px] bg-[#93a267] p-2 rounded-lg shadow-md cursor-pointer transition-transform duration-300 flex flex-col justify-center items-center text-center hover:shadow-lg hover:scale-105"
         >
           <div class="row2">
-            <img src="img\humidity.png" class="cards_logo" />
+            <img src="img\humidity.png" class="w-16 h-16" />
             <h3 class="dashboard__card-title">Humidity Sensor</h3>
           </div>
           <div class="row2">
             <p class="dashboard__card-content">
               <canvas id="humiditySensor" class="chart-container"></canvas>
             </p>
-            <div class="dashboard__card-details" id="humidityDetails">
+            <div class="" id="humidityDetails">
               <p>
                 <strong>Dew Point:</strong>
                 <span id="humidityDewPoint">18°C</span>
@@ -139,12 +138,12 @@
           class="w-[200px] h-[300px] bg-[#93a267] p-2 rounded-lg shadow-md cursor-pointer transition-transform duration-300 flex flex-col justify-center items-center text-center hover:shadow-lg hover:scale-105"
         >
           <div class="row2">
-            <img src="img\beaker-glass.png" class="cards_logo" />
+            <img src="img\beaker-glass.png" class="w-16 h-16" />
             <h3 class="dashboard__card-title">Total Dissolved Solids</h3>
           </div>
           <div class="row2">
             <p class="dashboard__card-content"><strong>PPM Level:</strong> <span id="doLevel">300</span></p>
-            <div class="dashboard__card-details" id="doDetails">
+            <div class="" id="doDetails">
               <p><strong>min:</strong> <span id="doSaturation">550</span></p>
               <p><strong>max:</strong> <span id="doTemp">850</span></p>
             </div>
@@ -156,12 +155,12 @@
           class="w-[200px] h-[300px] bg-[#93a267] p-2 rounded-lg shadow-md cursor-pointer transition-transform duration-300 flex flex-col justify-center items-center text-center hover:shadow-lg hover:scale-105"
         >
           <div class="row2">
-            <img src="img\water-temperature.png" class="cards_logo" />
+            <img src="img\water-temperature.png" class="w-16 h-16" />
             <h3 class="dashboard__card-title">Water Temperature Sensor</h3>
           </div>
           <div class="row2">
             <p class="dashboard__card-content"><strong>Water Temp:</strong> <span id="waterTempValue">20°C</span></p>
-            <div class="dashboard__card-details" id="waterTempDetails">
+            <div class="" id="waterTempDetails">
               <p><strong>Min:</strong> <span id="waterTempMin">18°C</span></p>
               <p><strong>Max:</strong> <span id="waterTempMax">22°C</span></p>
             </div>
@@ -173,7 +172,7 @@
           class="w-[200px] h-[300px] bg-[#93a267] p-2 rounded-lg shadow-md cursor-pointer transition-transform duration-300 flex flex-col justify-center items-center text-center hover:shadow-lg hover:scale-105"
         >
           <div class="row2">
-            <img src="img\water-level.png" class="cards_logo" />
+            <img src="img\water-level.png" class="w-16 h-16" />
             <h3 class="dashboard__card-title">Water Level Sensor</h3>
           </div>
           <div class="row2">
@@ -181,7 +180,7 @@
               <strong>Water Level:</strong>
               <span id="waterLevelValue">20%</span>
             </p>
-            <div class="dashboard__card-details" id="waterTempDetails">
+            <div class="" id="waterTempDetails">
               <p>
                 <strong>Min water level:</strong>
                 <span id="waterTempMin">40%</span>
@@ -330,7 +329,5 @@
         }
       });
     </script>
-
-    
   </body>
 </html>
