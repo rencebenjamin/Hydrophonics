@@ -41,11 +41,11 @@
     </nav>
 
     <script>
-      const menuBtn = document.getElementById('menuBtn');
-      const mobileMenu = document.getElementById('mobileMenu');
-    
-      menuBtn.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
+      const menuBtn = document.getElementById("menuBtn");
+      const mobileMenu = document.getElementById("mobileMenu");
+
+      menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
       });
     </script>
 
@@ -55,158 +55,151 @@
         <h1 class="text-2xl text-[#485935] font-semibold">REAL-TIME MONITORING AND PREDICTIONS</h1>
       </header>
 
-      <section class="dashboard__cards flex overflow-x-auto gap-x-4 max-w-full mx-auto px-4">
+      <!-- Cards Section -->
+
+      <section class="dashboard__cards flex flex-nowrap justify-center gap-4 max-w-full mx-auto px-4">
         <!-- pH Sensor -->
         <div
-          class="w-[200px] h-[300px] bg-[#93a267] p-2 rounded-lg shadow-md cursor-pointer transition-transform duration-300 flex flex-col justify-between items-center text-center hover:shadow-lg hover:scale-105"
+          class="w-[200px] bg-[#93a267] p-4 rounded-lg shadow-md cursor-pointer transition-transform duration-300 flex flex-col justify-between items-center text-center hover:shadow-lg hover:scale-105"
         >
           <!-- Canvas Section -->
-          <div class="flex items-center justify-center w-full mt-4">
+          <div class="flex items-center justify-center w-full mt-2">
             <canvas id="phSensor" class="chart-container max-w-full max-h-full"></canvas>
           </div>
 
           <!-- Logo Section -->
-          <div class="flex items-center justify-center w-full">
-            <img src="img/ph.png" class="w-16 h-16" />
+          <div class="flex items-center justify-center w-full mb-2">
+            <img src="img/ph.png" class="w-12 h-12 sm:w-16 sm:h-16" />
           </div>
 
           <!-- Title Section -->
-          <h3 class="text-xl font-bold w-full -mt-2">pH Sensor</h3>
+          <h3 class="text-xs sm:text-sm font-bold w-full text-center">pH Sensor</h3>
         </div>
 
         <!-- EC Sensor -->
         <div
-          class="w-[200px] h-[300px] bg-[#93a267] p-2 rounded-lg shadow-md cursor-pointer transition-transform duration-300 flex flex-col justify-between items-center text-center hover:shadow-lg hover:scale-105"
+          class="w-[200px] bg-[#93a267] p-4 rounded-lg shadow-md cursor-pointer transition-transform duration-300 flex flex-col justify-between items-center text-center hover:shadow-lg hover:scale-105"
         >
           <!-- Canvas Section -->
-          <div class="flex items-center justify-center w-full mt-4">
+          <div class="flex items-center justify-center w-full mt-2">
             <canvas id="ecSensor" class="chart-container max-w-full max-h-full"></canvas>
           </div>
 
           <!-- Logo Section -->
-          <div class="flex items-center justify-center w-full">
-            <img src="img/ecuador.png" class="w-16 h-16" />
+          <div class="flex items-center justify-center w-full mb-2">
+            <img src="img/ecuador.png" class="w-12 h-12 sm:w-16 sm:h-16" />
           </div>
 
           <!-- Title Section -->
-          <h3 class="text-xl font-bold w-full -mt-2">EC Sensor</h3>
+          <h3 class="text-xs sm:text-sm font-bold w-full text-center">EC Sensor</h3>
         </div>
 
         <!-- Light Intensity Sensor -->
         <div
-          class="w-[200px] h-[300px] bg-[#93a267] p-2 rounded-lg shadow-md cursor-pointer transition-transform duration-300 flex flex-col justify-between items-center text-center hover:shadow-lg hover:scale-105"
+          class="w-[200px] bg-[#93a267] p-4 rounded-lg shadow-md cursor-pointer transition-transform duration-300 flex flex-col justify-between items-center text-center hover:shadow-lg hover:scale-105"
         >
           <!-- Canvas Section -->
-          <div class="flex items-center justify-center w-full mt-4">
+          <div class="flex items-center justify-center w-full mt-2">
             <canvas id="lightSensor" class="chart-container max-w-full max-h-full"></canvas>
           </div>
 
           <!-- Logo Section -->
-          <div class="flex items-center justify-center w-full">
-            <img src="img\light.png" class="w-16 h-16" />
+          <div class="flex items-center justify-center w-full mb-2">
+            <img src="img\light.png" class="w-12 h-12 sm:w-16 sm:h-16" />
           </div>
 
           <!-- Title Section -->
-          <h3 class="text-base font-bold w-full -mt-2">Light Intensity Sensor</h3>
+          <h3 class="text-xs sm:text-sm font-bold w-full text-center whitespace-nowrap overflow-hidden text-ellipsis">Light Intensity Sensor</h3>
         </div>
 
         <!-- Temperature Sensor -->
         <div
-          class="w-[200px] h-[300px] bg-[#93a267] p-2 rounded-lg shadow-md cursor-pointer transition-transform duration-300 flex flex-col justify-between items-center text-center hover:shadow-lg hover:scale-105"
+          class="w-[200px] bg-[#93a267] p-4 rounded-lg shadow-md cursor-pointer transition-transform duration-300 flex flex-col justify-between items-center text-center hover:shadow-lg hover:scale-105"
         >
           <!-- Canvas Section -->
-          <div class="flex items-center justify-center w-full mt-4">
+          <div class="flex items-center justify-center w-full mt-2">
             <canvas id="tempSensor" class="chart-container max-w-full max-h-full"></canvas>
           </div>
 
           <!-- Logo Section -->
-          <div class="flex items-center justify-center w-full">
-            <img src="img\thermometer.png" class="w-16 h-16 mr-6" />
+          <div class="flex items-center justify-center w-full mb-2">
+            <img src="img\thermometer.png" class="w-12 h-12 sm:w-16 sm:h-16" />
           </div>
 
           <!-- Title Section -->
-          <h3 class="text-base font-bold w-full -mt-2">Temperature Sensor</h3>
+          <h3 class="text-xs sm:text-sm font-bold w-full text-center whitespace-nowrap overflow-hidden text-ellipsis">Temperature Sensor</h3>
         </div>
 
         <!-- Humidity Sensor -->
         <div
-          class="w-[200px] h-[300px] bg-[#93a267] p-2 rounded-lg shadow-md cursor-pointer transition-transform duration-300 flex flex-col justify-center items-center text-center hover:shadow-lg hover:scale-105"
+          class="w-[200px] bg-[#93a267] p-4 rounded-lg shadow-md cursor-pointer transition-transform duration-300 flex flex-col justify-between items-center text-center hover:shadow-lg hover:scale-105"
         >
-          <div class="row2">
-            <img src="img\humidity.png" class="w-16 h-16" />
-            <h3 class="dashboard__card-title">Humidity Sensor</h3>
+          <!-- Canvas Section -->
+          <div class="flex items-center justify-center w-full mt-2">
+            <canvas id="humiditySensor" class="chart-container max-w-full max-h-full"></canvas>
           </div>
-          <div class="row2">
-            <p class="dashboard__card-content">
-              <canvas id="humiditySensor" class="chart-container"></canvas>
-            </p>
-            <div class="" id="humidityDetails">
-              <p>
-                <strong>Dew Point:</strong>
-                <span id="humidityDewPoint">18°C</span>
-              </p>
-              <p>
-                <strong>Absolute Humidity:</strong>
-                <span id="humidityAbsolute">10 g/m³</span>
-              </p>
-            </div>
+
+          <!-- Logo Section -->
+          <div class="flex items-center justify-center w-full mb-2">
+            <img src="img\humidity.png" class="w-12 h-12 sm:w-16 sm:h-16" />
           </div>
+
+          <!-- Title Section -->
+          <h3 class="text-xs sm:text-sm font-bold w-full text-center">Humidity Sensor</h3>
         </div>
 
-        <!-- Dissolved Oxygen Sensor -->
+        <!-- Total Dissolved Solids -->
         <div
-          class="w-[200px] h-[300px] bg-[#93a267] p-2 rounded-lg shadow-md cursor-pointer transition-transform duration-300 flex flex-col justify-center items-center text-center hover:shadow-lg hover:scale-105"
+          class="w-[200px] bg-[#93a267] p-4 rounded-lg shadow-md cursor-pointer transition-transform duration-300 flex flex-col justify-between items-center text-center hover:shadow-lg hover:scale-105"
         >
-          <div class="row2">
-            <img src="img\beaker-glass.png" class="w-16 h-16" />
-            <h3 class="dashboard__card-title">Total Dissolved Solids</h3>
+          <!-- Canvas Section -->
+          <div class="flex items-center justify-center w-full mt-2">
+            <canvas id="totalDissolvedSolids" class="chart-container max-w-full max-h-full"></canvas>
           </div>
-          <div class="row2">
-            <p class="dashboard__card-content"><strong>PPM Level:</strong> <span id="doLevel">300</span></p>
-            <div class="" id="doDetails">
-              <p><strong>min:</strong> <span id="doSaturation">550</span></p>
-              <p><strong>max:</strong> <span id="doTemp">850</span></p>
-            </div>
+
+          <!-- Logo Section -->
+          <div class="flex items-center justify-center w-full mb-2">
+            <img src="img/beaker-glass.png" class="w-12 h-12 sm:w-16 sm:h-16" />
           </div>
+
+          <!-- Title Section -->
+          <h3 class="text-xs sm:text-sm font-bold w-full text-center whitespace-nowrap overflow-hidden text-ellipsis">Total Dissolved Solids</h3>
         </div>
 
         <!-- Water Temperature Sensor -->
         <div
-          class="w-[200px] h-[300px] bg-[#93a267] p-2 rounded-lg shadow-md cursor-pointer transition-transform duration-300 flex flex-col justify-center items-center text-center hover:shadow-lg hover:scale-105"
+          class="w-[200px] bg-[#93a267] p-4 rounded-lg shadow-md cursor-pointer transition-transform duration-300 flex flex-col justify-between items-center text-center hover:shadow-lg hover:scale-105"
         >
-          <div class="row2">
-            <img src="img\water-temperature.png" class="w-16 h-16" />
-            <h3 class="dashboard__card-title">Water Temperature Sensor</h3>
+          <!-- Canvas Section -->
+          <div class="flex items-center justify-center w-full mt-2">
+            <canvas id="waterTempSensor" class="chart-container max-w-full max-h-full"></canvas>
           </div>
-          <div class="row2">
-            <p class="dashboard__card-content"><strong>Water Temp:</strong> <span id="waterTempValue">20°C</span></p>
-            <div class="" id="waterTempDetails">
-              <p><strong>Min:</strong> <span id="waterTempMin">18°C</span></p>
-              <p><strong>Max:</strong> <span id="waterTempMax">22°C</span></p>
-            </div>
+
+          <!-- Logo Section -->
+          <div class="flex items-center justify-center w-full mb-2">
+            <img src="img/water-temperature.png" class="w-12 h-12 sm:w-16 sm:h-16" />
           </div>
+
+          <!-- Title Section -->
+          <h3 class="text-xs sm:text-sm font-bold w-full text-center whitespace-nowrap overflow-hidden text-ellipsis">Water Temp Sensor</h3>
         </div>
 
-        <!-- Water Sensor -->
+        <!-- Water Level Sensor -->
         <div
-          class="w-[200px] h-[300px] bg-[#93a267] p-2 rounded-lg shadow-md cursor-pointer transition-transform duration-300 flex flex-col justify-center items-center text-center hover:shadow-lg hover:scale-105"
+          class="w-[200px] bg-[#93a267] p-4 rounded-lg shadow-md cursor-pointer transition-transform duration-300 flex flex-col justify-between items-center text-center hover:shadow-lg hover:scale-105"
         >
-          <div class="row2">
-            <img src="img\water-level.png" class="w-16 h-16" />
-            <h3 class="dashboard__card-title">Water Level Sensor</h3>
+          <!-- Canvas Section -->
+          <div class="flex items-center justify-center w-full mt-2">
+            <canvas id="waterLvlSensor" class="chart-container max-w-full max-h-full"></canvas>
           </div>
-          <div class="row2">
-            <p class="dashboard__card-content">
-              <strong>Water Level:</strong>
-              <span id="waterLevelValue">20%</span>
-            </p>
-            <div class="" id="waterTempDetails">
-              <p>
-                <strong>Min water level:</strong>
-                <span id="waterTempMin">40%</span>
-              </p>
-            </div>
+
+          <!-- Logo Section -->
+          <div class="flex items-center justify-center w-full mb-2">
+            <img src="img/water-level.png" class="w-12 h-12 sm:w-16 sm:h-16" />
           </div>
+
+          <!-- Title Section -->
+          <h3 class="text-xs sm:text-sm font-bold w-full text-center">Water Level Sensor</h3>
         </div>
       </section>
 
@@ -323,12 +316,12 @@
 
       // Initialize Charts with Correct IDs and Values (Ensure IDs exist in HTML)
       const charts = {
-        phSensor: createChart("phSensor", 60), // Replace with actual % values
+        phSensor: createChart("phSensor", 60),
         ecSensor: createChart("ecSensor", 75),
         lightSensor: createChart("lightSensor", 80),
         tempSensor: createChart("tempSensor", 50),
         humiditySensor: createChart("humiditySensor", 40),
-        totalSolid: createChart("totalSolid", 65),
+        totalDissolvedSolids: createChart("totalDissolvedSolids", 65),
         waterTempSensor: createChart("waterTempSensor", 55),
         waterLvlSensor: createChart("waterLvlSensor", 30),
       };

@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 .colors {
-  color: #24841b;
+  color: hsl(115, 66%, 31%);
   color: #64cb2c;
   color: #347cac;
   color: #3c9c04;
