@@ -13,20 +13,41 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
   <body>
-    <!-- Navbar -->
-    <nav class="fixed top-0 left-0 w-full bg-white text-black px-16 py-2 flex items-center justify-center gap-x-56 shadow-md z-50">
-      <!-- Left: Logo & Navigation Links (Grouped together) -->
-      <div class="flex items-center space-x-6 text-lg font-bold">
+    <nav class="fixed top-0 left-0 w-full bg-white text-black px-6 sm:px-12 py-3 flex items-center justify-between shadow-md z-50">
+      <!-- Left: Logo & Menu -->
+      <div class="flex items-center space-x-4 sm:space-x-6">
         <a href="#hydroponics">
-          <img src="img/11.png" class="h-12 w-auto max-w-[120px]" alt="Hydroponics Logo" />
+          <img src="img/11.png" class="h-10 w-auto max-w-[120px]" alt="Hydroponics Logo" />
         </a>
-        <a href="Hydrophonics.html" class="nav-link hover:text-green-400 transition">Dashboard</a>
-        <a href="Analytics.html" class="nav-link hover:text-green-400 transition">Analytics</a>
+
+        <!-- Desktop Nav Links -->
+        <div class="hidden sm:flex space-x-4 sm:space-x-6 text-lg font-bold">
+          <a href="Hydrophonics.html" class="nav-link hover:text-green-400 transition">Dashboard</a>
+          <a href="Analytics.html" class="nav-link hover:text-green-400 transition">Analytics</a>
+        </div>
       </div>
 
       <!-- Right: Date & Time -->
       <div id="dateTime" class="text-lg font-bold"></div>
+
+      <!-- Mobile Menu Button -->
+      <button id="menuBtn" class="sm:hidden text-2xl">☰</button>
+
+      <!-- Mobile Dropdown -->
+      <div id="mobileMenu" class="hidden absolute top-16 left-0 w-full bg-white shadow-md flex flex-col items-center space-y-4 py-4 sm:hidden">
+        <a href="Hydrophonics.html" class="nav-link hover:text-green-400 transition">Dashboard</a>
+        <a href="Analytics.html" class="nav-link hover:text-green-400 transition">Analytics</a>
+      </div>
     </nav>
+
+    <script>
+      const menuBtn = document.getElementById('menuBtn');
+      const mobileMenu = document.getElementById('mobileMenu');
+    
+      menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+    </script>
 
     <!-- Main Content -->
     <main class="mt-[60px] p-5">
@@ -34,7 +55,7 @@
         <h1 class="text-2xl text-[#485935] font-semibold">REAL-TIME MONITORING AND PREDICTIONS</h1>
       </header>
 
-      <section class="dashboard__cards grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 max-w-[850px] mx-auto">
+      <section class="dashboard__cards flex overflow-x-auto gap-x-4 max-w-full mx-auto px-4">
         <!-- pH Sensor -->
         <div
           class="w-[200px] h-[300px] bg-[#93a267] p-2 rounded-lg shadow-md cursor-pointer transition-transform duration-300 flex flex-col justify-between items-center text-center hover:shadow-lg hover:scale-105"
@@ -97,15 +118,14 @@
           <div class="flex items-center justify-center w-full mt-4">
             <canvas id="tempSensor" class="chart-container max-w-full max-h-full"></canvas>
           </div>
-          
+
           <!-- Logo Section -->
           <div class="flex items-center justify-center w-full">
             <img src="img\thermometer.png" class="w-16 h-16 mr-6" />
           </div>
 
-            <!-- Title Section -->
+          <!-- Title Section -->
           <h3 class="text-base font-bold w-full -mt-2">Temperature Sensor</h3>
-
         </div>
 
         <!-- Humidity Sensor -->
