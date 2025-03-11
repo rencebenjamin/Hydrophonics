@@ -1,0 +1,44 @@
+[33m1b694c7[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mnav-fix[m[33m, [m[1;31morigin/nav-fix[m[33m, [m[1;32mfix/cards-layout[m[33m)[m fix: navbar responsive
+[33mc5aca42[m[33m ([m[1;31morigin/fix/cards-layout[m[33m)[m initial push
+[33m63789ac[m Horizontal na ang cards.
+[33m85f0412[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m All cards are now horizontally displayed.
+[33mf859d3f[m Fixed four cards palang, antok na ako xD
+[33m35a71c1[m Minor fix
+[33m8b16e0d[m Updated Readme
+[33m88b5bd2[m Navbar, cards and time fixed. CSS optimized, Tailwind added.
+[33m2bdc865[m Merge pull request #4 from rencebenjamin/Branch-03-04-25-Updated-Analytics-Report-Overview
+[33m9d5fd84[m[33m ([m[1;31morigin/branch-02-25-25-12-05[m[33m, [m[1;31morigin/Branch-03-04-25-Updated-Analytics-Report-Overview[m[33m)[m 03-04-25 Changes: Analytics, report, overview
+[33m5f96fb3[m 03-04-25 - analytics and reports
+[33m401f557[m[33m ([m[1;31morigin/branch-03-03-25-12-00[m[33m)[m Merge branch 'branch-02-25-25-12-05' of https://github.com/rencebenjamin/Hydrophonics into branch-02-25-25-12-05
+[33m830cf18[m 11:56 AM - 03-03-25
+[33m097e653[m Update README.md
+[33mef1fcbd[m[33m ([m[1;31morigin/Ramon_Branch_02_26_25_2_20[m[33m)[m Kalbobot eut bababoy
+[33m264a597[m Update README.md
+[33mcdfc0d7[m Create README.md
+[33mdbf8f9b[m Add files via upload
+[33mc1079d9[m Updated
+[33m39bddda[m commit bago umuwe
+[33m5af8030[m Inayos ko na yung directory ng images.
+[33mc6201ec[m Use git pull --rebase kapag mag pull kayo
+[33m8b6cb78[m Ito na yung images Ramon
+[33m3732d7f[m Deleted duplicate files from root
+[33mc7331b2[m Jez... palitan mo lang ung kulay na ginamit mo sa ginagawa mo.
+[33m73ac929[m Update script.js
+[33m1935a0d[m Update styles.css
+[33m7fe2553[m Update Hydrophonics.html
+[33m579b930[m Update styles.css
+[33m37bfe8f[m Update script.js
+[33mccf125e[m Update Hydrophonics.html
+[33m681a92e[m Delete styles.css
+[33m46735ae[m Delete script.js
+[33m4629524[m Delete Hydrophonics.html
+[33m0279f91[m Add files via upload
+[33m4614057[m Delete Hydrophonics.css
+[33m3e3a9d2[m Delete Hydrophonics.js
+[33m15eb402[m delete.css
+[33me411116[m delete.js
+[33mb127114[m Add files via upload
+[33m4650bb4[m Hydrophonics.js
+[33m91c5503[m  Hydrophonics.css
+[33mb0c4fff[m Hydrophonics.html
+[33mbad4f7b[m Add files via upload

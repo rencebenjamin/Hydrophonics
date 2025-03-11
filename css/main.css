@@ -10,16 +10,6 @@ body {
   min-height: 100vh;
   width: 100%;
 
-  /* Box Model */
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-
-  /* Typography */
-  font-family: Arial, sans-serif;
-  color: #0a180b;
-
   /* Visual */
   background: #fbfbfb;
 }
