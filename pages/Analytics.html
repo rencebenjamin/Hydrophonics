@@ -7,31 +7,39 @@
     <link rel="stylesheet" href="styles.css" />
     <link rel="icon" href="img\11.png" />
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/navbar.css" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/font.css" />
   </head>
 
   <body>
-    <!-- Navbar -->
-    <nav class="fixed top-0 left-0 w-full bg-white text-black px-16 py-2 flex items-center justify-center gap-x-56 shadow-md z-50">
-      <!-- Left: Logo & Navigation Links (Grouped together) -->
-      <div class="flex items-center space-x-6 text-lg font-bold">
+    <nav class="navbar">
+      <!-- Left: Logo & Menu -->
+
+      <div class="logo">
         <a href="#hydroponics">
-          <img src="img/11.png" class="h-12 w-auto max-w-[120px]" alt="Hydroponics Logo" />
+          <img src="../img/nav-logo.png" alt="Hydroponics Logo" />
         </a>
-        <a href="Hydrophonics.html" class="nav-link hover:text-green-400 transition">Dashboard</a>
-        <a href="Analytics.html" class="nav-link hover:text-green-400 transition">Analytics</a>
       </div>
 
+      <!-- Desktop Nav Links -->
+      <ul>
+        <li class="nav-item"><a href="../Hydrophonics.html" class="nav-link">Dashboard</a></li>
+        <li class="nav-item"><a href="#Analytics.html" class="nav-link active">Analytics</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Reports</a></li>
+      </ul>
+
       <!-- Right: Date & Time -->
-      <div id="dateTime" class="text-lg font-bold"></div>
+      <div id="dateTime" class="date-time"></div>
+      
     </nav>
 
     <!-- Main Content -->
-    <main class="mt-[60px] p-5">
+    <main>
       <header class="text-center">
-        <h1 class="text-2xl text-[#485935] font-semibold">REAL-TIME MONITORING AND PREDICTIONS</h1>
-        <p class="text-red-500">If this text is red, Tailwind is working.</p>
+        <h3>REAL-TIME MONITORING AND PREDICTIONS</h3>
+
       </header>
       <header class="dashboard__header">
         <h1 class="dashboard__greeting"></h1>
@@ -208,41 +216,11 @@
       </section>
     </main>
 
-    <!-- Real time and date script -->
-    <script>
-      function updateDateTime() {
-        const now = new Date();
-        const options = {
-          weekday: "long",
-          year: "numeric",
-          month: "long",
-          day: "numeric",
-          hour: "2-digit",
-          minute: "2-digit",
-          second: "2-digit",
-          hour12: true,
-        };
-        document.getElementById("dateTime").textContent = now.toLocaleString("en-US", options);
-      }
 
-      setInterval(updateDateTime, 1000);
-      updateDateTime();
-    </script>
 
-    <!-- For Navbar Hover effect -->
-    <script>
-      // Get the current URL path
-      const currentPage = window.location.pathname.split("/").pop();
-
-      // Select all nav links
-      const navLinks = document.querySelectorAll(".nav-link");
-
-      // Loop through links and apply active styling if it matches
-      navLinks.forEach((link) => {
-        if (link.getAttribute("href") === currentPage) {
-          link.classList.add("text-green-400", "font-semibold");
-        }
-      });
-    </script>
+    <!-- Scripts -->
+    <script src="../js/time-date.js"></script>
+    <script src="../js/chart.js"></script>
+    <script src="../js/nav-hover.js"></script>
   </body>
 </html>

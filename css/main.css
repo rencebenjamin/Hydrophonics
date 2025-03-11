@@ -14,6 +14,19 @@ body {
   background: #fbfbfb;
 }
 
-.main{
-  
+h3{
+  text-align: center;
+  padding : 1rem;
 }
+
+.dashboard__main{
+  padding: 1rem;
+}
+
+
+
+
+
+
+
+

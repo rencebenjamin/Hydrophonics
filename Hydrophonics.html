@@ -7,9 +7,10 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="./css/navbar.css" />
-    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/main.css" />
     <link rel="stylesheet" href="./css/font.css" />
-    
+    <link rel="stylesheet" href="./css/card.css" />
+
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
 
@@ -25,121 +26,149 @@
 
       <!-- Desktop Nav Links -->
       <ul>
-        <li class="nav-item"><a href="Hydrophonics.html" class="nav-link">Dashboard</a></li>
+        <li class="nav-item"><a href="Hydrophonics.html" class="nav-link active">Dashboard</a></li>
         <li class="nav-item"><a href="pages/Analytics.html" class="nav-link">Analytics</a></li>
         <li class="nav-item"><a href="#" class="nav-link">Reports</a></li>
       </ul>
 
       <!-- Right: Date & Time -->
       <div id="dateTime" class="date-time"></div>
+      
     </nav>
 
+    <h3>REAL-TIME MONITORING AND PREDICTIONS</h3>
 
+    <!-- main content goes here -->
+    <main class="dashboard__main">
+      <section class="dashboard__cards">
+        <!-- pH Sensor -->
+        <div class="card">
+          <!-- Canvas Section -->
+          <div class="chart-container">
+            <canvas id="phSensor" class="canvas"></canvas>
+          </div>
 
-    
+          <!-- Logo Section -->
+          <div class="logo-container">
+            <img src="img/ph.png" alt="pH Sensor" class="sensor-logo" />
+          </div>
 
-    <!-- Real time and date script -->
-    <script>
-      function updateDateTime() {
-        const now = new Date();
-        const options = {
-          weekday: "long",
-          year: "numeric",
-          month: "long",
-          day: "numeric",
-          hour: "2-digit",
-          minute: "2-digit",
-          second: "2-digit",
-          hour12: true,
-        };
-        document.getElementById("dateTime").textContent = now.toLocaleString("en-US", options);
-      }
+          <!-- Title Section -->
+          <h3 class="sensor-title">pH Sensor</h3>
+        </div>
 
-      setInterval(updateDateTime, 1000);
-      updateDateTime();
-    </script>
+        <!-- pH Sensor -->
+        <div class="card">
+          <!-- Canvas Section -->
+          <div class="chart-container">
+            <canvas id="phSensor" class="canvas"></canvas>
+          </div>
 
-    <!-- Chart script -->
-    <script>
-      function createChart(canvasId, percentage) {
-        const canvas = document.getElementById(canvasId);
-        if (!canvas) {
-          console.error(`Canvas ID '${canvasId}' not found!`);
-          return;
-        }
+          <!-- Logo Section -->
+          <div class="logo-container">
+            <img src="img/ph.png" alt="pH Sensor" class="sensor-logo" />
+          </div>
 
-        const ctx = canvas.getContext("2d");
+          <!-- Title Section -->
+          <h3 class="sensor-title">pH Sensor</h3>
+        </div>
+        <!-- pH Sensor -->
+        <div class="card">
+          <!-- Canvas Section -->
+          <div class="chart-container">
+            <canvas id="phSensor" class="canvas"></canvas>
+          </div>
 
-        return new Chart(ctx, {
-          type: "doughnut",
-          data: {
-            datasets: [
-              {
-                data: [percentage, 100 - percentage], // Percentage value
-                backgroundColor: ["#36A2EB", "#E5E7EB"], // Blue for actual value, Light Gray for remaining
-                borderWidth: 0,
-              },
-            ],
-          },
-          options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            cutout: "80%", // Controls doughnut size
-            plugins: {
-              legend: { display: false },
-              tooltip: { enabled: false },
-            },
-          },
-          plugins: [
-            {
-              afterDraw: function (chart) {
-                const { width, height, ctx } = chart;
+          <!-- Logo Section -->
+          <div class="logo-container">
+            <img src="img/ph.png" alt="pH Sensor" class="sensor-logo" />
+          </div>
 
-                ctx.restore();
-                const fontSize = (height / 6).toFixed(2);
-                ctx.font = fontSize + "px Arial";
-                ctx.textBaseline = "middle";
+          <!-- Title Section -->
+          <h3 class="sensor-title">pH Sensor</h3>
+        </div>
+        <!-- pH Sensor -->
+        <div class="card">
+          <!-- Canvas Section -->
+          <div class="chart-container">
+            <canvas id="phSensor" class="canvas"></canvas>
+          </div>
 
-                const text = percentage + "%",
-                  textX = Math.round((width - ctx.measureText(text).width) / 2),
-                  textY = height / 2;
+          <!-- Logo Section -->
+          <div class="logo-container">
+            <img src="img/ph.png" alt="pH Sensor" class="sensor-logo" />
+          </div>
 
-                ctx.fillStyle = "#3D4852";
-                ctx.fillText(text, textX, textY);
-                ctx.save();
-              },
-            },
-          ],
-        });
-      }
+          <!-- Title Section -->
+          <h3 class="sensor-title">pH Sensor</h3>
+        </div>
+        <!-- pH Sensor -->
+        <div class="card">
+          <!-- Canvas Section -->
+          <div class="chart-container">
+            <canvas id="phSensor" class="canvas"></canvas>
+          </div>
 
-      // Initialize Charts with Correct IDs and Values (Ensure IDs exist in HTML)
-      const charts = {
-        phSensor: createChart("phSensor", 60),
-        ecSensor: createChart("ecSensor", 75),
-        lightSensor: createChart("lightSensor", 80),
-        tempSensor: createChart("tempSensor", 50),
-        humiditySensor: createChart("humiditySensor", 40),
-        totalDissolvedSolids: createChart("totalDissolvedSolids", 65),
-        waterTempSensor: createChart("waterTempSensor", 55),
-        waterLvlSensor: createChart("waterLvlSensor", 30),
-      };
-    </script>
+          <!-- Logo Section -->
+          <div class="logo-container">
+            <img src="img/ph.png" alt="pH Sensor" class="sensor-logo" />
+          </div>
 
-    <!-- For Navbar Hover effect -->
-    <script>
-      // Get the current URL path
-      const currentPage = window.location.pathname.split("/").pop();
+          <!-- Title Section -->
+          <h3 class="sensor-title">pH Sensor</h3>
+        </div>
+        <!-- pH Sensor -->
+        <div class="card">
+          <!-- Canvas Section -->
+          <div class="chart-container">
+            <canvas id="phSensor" class="canvas"></canvas>
+          </div>
 
-      // Select all nav links
-      const navLinks = document.querySelectorAll(".nav-link");
+          <!-- Logo Section -->
+          <div class="logo-container">
+            <img src="img/ph.png" alt="pH Sensor" class="sensor-logo" />
+          </div>
 
-      // Loop through links and apply active styling if it matches
-      navLinks.forEach((link) => {
-        if (link.getAttribute("href") === currentPage) {
-          link.classList.add("text-green-400", "font-semibold");
-        }
-      });
-    </script>
+          <!-- Title Section -->
+          <h3 class="sensor-title">pH Sensor</h3>
+        </div>
+        <!-- pH Sensor -->
+        <div class="card">
+          <!-- Canvas Section -->
+          <div class="chart-container">
+            <canvas id="phSensor" class="canvas"></canvas>
+          </div>
+
+          <!-- Logo Section -->
+          <div class="logo-container">
+            <img src="img/ph.png" alt="pH Sensor" class="sensor-logo" />
+          </div>
+
+          <!-- Title Section -->
+          <h3 class="sensor-title">pH Sensor</h3>
+        </div>
+        <!-- pH Sensor -->
+        <div class="card">
+          <!-- Canvas Section -->
+          <div class="chart-container">
+            <canvas id="phSensor" class="canvas"></canvas>
+          </div>
+
+          <!-- Logo Section -->
+          <div class="logo-container">
+            <img src="img/ph.png" alt="pH Sensor" class="sensor-logo" />
+          </div>
+
+          <!-- Title Section -->
+          <h3 class="sensor-title">pH Sensor</h3>
+        </div>
+      </section>
+    </main>
+
+    <!-- Scripts -->
+    <script src="js/time-date.js"></script>
+    <script src="js/chart.js"></script>
+    <script src="js/nav-hover.js"></script>
+
   </body>
 </html>
