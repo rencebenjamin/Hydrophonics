@@ -27,14 +27,9 @@ body {
   display: flex;
   flex-direction: column;
 
-  /* Typography */
-  font-family: Arial, sans-serif;
-  color: #0a180b;
-
   /* Visual */
   background: #fbfbfb;
 }
-
 
 h5 {
   color: #cadbb7;

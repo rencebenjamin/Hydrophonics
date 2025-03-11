@@ -9,235 +9,37 @@
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/navbar.css" />
+    <link rel="stylesheet" href="/css/font.css" />
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
+
   <body>
     <nav class="navbar">
       <!-- Left: Logo & Menu -->
-      <div class="navdiv">
-        <a href="#hydroponics">
-          <img src="img/11.png" class="h-10 w-auto max-w-[120px]" alt="Hydroponics Logo" />
-        </a>
 
-        <!-- Desktop Nav Links -->
-        <div class="">
-          <a href="Hydrophonics.html" class="nav-link hover:text-green-400 transition">Dashboard</a>
-          <a href="Analytics.html" class="nav-link hover:text-green-400 transition">Analytics</a>
-        </div>
+      <div class="logo">
+        <a href="#hydroponics">
+          <img src="img/nav-logo.png" alt="Hydroponics Logo" />
+        </a>
       </div>
+
+      <!-- Desktop Nav Links -->
+      <ul>
+        <li class="nav-item"><a href="Hydrophonics.html" class="nav-link">Dashboard</a></li>
+        <li class="nav-item"><a href="Analytics.html" class="nav-link">Analytics</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Reports</a></li>
+      </ul>
 
       <!-- Right: Date & Time -->
-      <div id="dateTime" class="text-lg font-bold"></div>
-
-      <!-- Mobile Menu Button -->
-      <button id="menuBtn" class="sm:hidden text-2xl">☰</button>
-
-      <!-- Mobile Dropdown -->
-      <div id="mobileMenu" class="hidden absolute top-16 left-0 w-full bg-white shadow-md flex flex-col items-center space-y-4 py-4 sm:hidden">
-        <a href="Hydrophonics.html" class="nav-link hover:text-green-400 transition">Dashboard</a>
-        <a href="Analytics.html" class="nav-link hover:text-green-400 transition">Analytics</a>
-      </div>
+      <div id="dateTime" class="date-time"></div>
     </nav>
 
-    <script>
-      const menuBtn = document.getElementById("menuBtn");
-      const mobileMenu = document.getElementById("mobileMenu");
 
-      menuBtn.addEventListener("click", () => {
-        mobileMenu.classList.toggle("hidden");
-      });
-    </script>
 
-    <!-- Main Content -->
-    <main class="mt-[60px] p-5">
-      <header class="text-center">
-        <h1 class="text-2xl text-[#485935] font-semibold">REAL-TIME MONITORING AND PREDICTIONS</h1>
-      </header>
-
-      <!-- Cards Section -->
-
-      <section class="dashboard__cards flex flex-nowrap justify-center gap-4 max-w-full mx-auto px-4">
-        <!-- pH Sensor -->
-        <div
-          class="w-[200px] bg-[#93a267] p-4 rounded-lg shadow-md cursor-pointer transition-transform duration-300 flex flex-col justify-between items-center text-center hover:shadow-lg hover:scale-105"
-        >
-          <!-- Canvas Section -->
-          <div class="flex items-center justify-center w-full mt-2">
-            <canvas id="phSensor" class="chart-container max-w-full max-h-full"></canvas>
-          </div>
-
-          <!-- Logo Section -->
-          <div class="flex items-center justify-center w-full mb-2">
-            <img src="img/ph.png" class="w-12 h-12 sm:w-16 sm:h-16" />
-          </div>
-
-          <!-- Title Section -->
-          <h3 class="text-xs sm:text-sm font-bold w-full text-center">pH Sensor</h3>
-        </div>
-
-        <!-- EC Sensor -->
-        <div
-          class="w-[200px] bg-[#93a267] p-4 rounded-lg shadow-md cursor-pointer transition-transform duration-300 flex flex-col justify-between items-center text-center hover:shadow-lg hover:scale-105"
-        >
-          <!-- Canvas Section -->
-          <div class="flex items-center justify-center w-full mt-2">
-            <canvas id="ecSensor" class="chart-container max-w-full max-h-full"></canvas>
-          </div>
-
-          <!-- Logo Section -->
-          <div class="flex items-center justify-center w-full mb-2">
-            <img src="img/ecuador.png" class="w-12 h-12 sm:w-16 sm:h-16" />
-          </div>
-
-          <!-- Title Section -->
-          <h3 class="text-xs sm:text-sm font-bold w-full text-center">EC Sensor</h3>
-        </div>
-
-        <!-- Light Intensity Sensor -->
-        <div
-          class="w-[200px] bg-[#93a267] p-4 rounded-lg shadow-md cursor-pointer transition-transform duration-300 flex flex-col justify-between items-center text-center hover:shadow-lg hover:scale-105"
-        >
-          <!-- Canvas Section -->
-          <div class="flex items-center justify-center w-full mt-2">
-            <canvas id="lightSensor" class="chart-container max-w-full max-h-full"></canvas>
-          </div>
-
-          <!-- Logo Section -->
-          <div class="flex items-center justify-center w-full mb-2">
-            <img src="img\light.png" class="w-12 h-12 sm:w-16 sm:h-16" />
-          </div>
-
-          <!-- Title Section -->
-          <h3 class="text-xs sm:text-sm font-bold w-full text-center whitespace-nowrap overflow-hidden text-ellipsis">Light Intensity Sensor</h3>
-        </div>
-
-        <!-- Temperature Sensor -->
-        <div
-          class="w-[200px] bg-[#93a267] p-4 rounded-lg shadow-md cursor-pointer transition-transform duration-300 flex flex-col justify-between items-center text-center hover:shadow-lg hover:scale-105"
-        >
-          <!-- Canvas Section -->
-          <div class="flex items-center justify-center w-full mt-2">
-            <canvas id="tempSensor" class="chart-container max-w-full max-h-full"></canvas>
-          </div>
-
-          <!-- Logo Section -->
-          <div class="flex items-center justify-center w-full mb-2">
-            <img src="img\thermometer.png" class="w-12 h-12 sm:w-16 sm:h-16" />
-          </div>
-
-          <!-- Title Section -->
-          <h3 class="text-xs sm:text-sm font-bold w-full text-center whitespace-nowrap overflow-hidden text-ellipsis">Temperature Sensor</h3>
-        </div>
-
-        <!-- Humidity Sensor -->
-        <div
-          class="w-[200px] bg-[#93a267] p-4 rounded-lg shadow-md cursor-pointer transition-transform duration-300 flex flex-col justify-between items-center text-center hover:shadow-lg hover:scale-105"
-        >
-          <!-- Canvas Section -->
-          <div class="flex items-center justify-center w-full mt-2">
-            <canvas id="humiditySensor" class="chart-container max-w-full max-h-full"></canvas>
-          </div>
-
-          <!-- Logo Section -->
-          <div class="flex items-center justify-center w-full mb-2">
-            <img src="img\humidity.png" class="w-12 h-12 sm:w-16 sm:h-16" />
-          </div>
-
-          <!-- Title Section -->
-          <h3 class="text-xs sm:text-sm font-bold w-full text-center">Humidity Sensor</h3>
-        </div>
-
-        <!-- Total Dissolved Solids -->
-        <div
-          class="w-[200px] bg-[#93a267] p-4 rounded-lg shadow-md cursor-pointer transition-transform duration-300 flex flex-col justify-between items-center text-center hover:shadow-lg hover:scale-105"
-        >
-          <!-- Canvas Section -->
-          <div class="flex items-center justify-center w-full mt-2">
-            <canvas id="totalDissolvedSolids" class="chart-container max-w-full max-h-full"></canvas>
-          </div>
-
-          <!-- Logo Section -->
-          <div class="flex items-center justify-center w-full mb-2">
-            <img src="img/beaker-glass.png" class="w-12 h-12 sm:w-16 sm:h-16" />
-          </div>
-
-          <!-- Title Section -->
-          <h3 class="text-xs sm:text-sm font-bold w-full text-center whitespace-nowrap overflow-hidden text-ellipsis">Total Dissolved Solids</h3>
-        </div>
-
-        <!-- Water Temperature Sensor -->
-        <div
-          class="w-[200px] bg-[#93a267] p-4 rounded-lg shadow-md cursor-pointer transition-transform duration-300 flex flex-col justify-between items-center text-center hover:shadow-lg hover:scale-105"
-        >
-          <!-- Canvas Section -->
-          <div class="flex items-center justify-center w-full mt-2">
-            <canvas id="waterTempSensor" class="chart-container max-w-full max-h-full"></canvas>
-          </div>
-
-          <!-- Logo Section -->
-          <div class="flex items-center justify-center w-full mb-2">
-            <img src="img/water-temperature.png" class="w-12 h-12 sm:w-16 sm:h-16" />
-          </div>
-
-          <!-- Title Section -->
-          <h3 class="text-xs sm:text-sm font-bold w-full text-center whitespace-nowrap overflow-hidden text-ellipsis">Water Temp Sensor</h3>
-        </div>
-
-        <!-- Water Level Sensor -->
-        <div
-          class="w-[200px] bg-[#93a267] p-4 rounded-lg shadow-md cursor-pointer transition-transform duration-300 flex flex-col justify-between items-center text-center hover:shadow-lg hover:scale-105"
-        >
-          <!-- Canvas Section -->
-          <div class="flex items-center justify-center w-full mt-2">
-            <canvas id="waterLvlSensor" class="chart-container max-w-full max-h-full"></canvas>
-          </div>
-
-          <!-- Logo Section -->
-          <div class="flex items-center justify-center w-full mb-2">
-            <img src="img/water-level.png" class="w-12 h-12 sm:w-16 sm:h-16" />
-          </div>
-
-          <!-- Title Section -->
-          <h3 class="text-xs sm:text-sm font-bold w-full text-center">Water Level Sensor</h3>
-        </div>
-      </section>
-
-      <!-- Bottom Sections Container -->
-      <div class="dashboard__bottom-container">
-        <!-- Sensor Graphs Dashboard (First Column) -->
-        <section class="dashboard__bottom">
-          <div class="dashboard__bottom-column">
-            <div class="dashboard__grafana">
-              <h3 class="dashboard__card-title">SENSOR GRAPHS</h3>
-              <div class="grafana-container">
-                <iframe
-                  id="grafanaFrame"
-                  src="http://localhost:3000/d-solo/becswr8bew2rkf/test-dashboard?orgId=1&from=1740116196107&to=1740116496107&timezone=browser&refresh=5s&theme=light&panelId=1&__feature.dashboardSceneSolo"
-                  width="450"
-                  height="200"
-                  frameborder="0"
-                  class="grafana-iframe"
-                >
-                </iframe>
-              </div>
-              <!-- Refresh Button -->
-              <button class="refresh-button" onclick="resetGrafana()">Reset Graph</button>
-            </div>
-          </div>
-        </section>
-
-        <!-- Summary Card (Second Column) -->
-        <section class="dashboard__bottom">
-          <div class="dashboard__bottom-column">
-            <div class="dashboard__card dashboard__card--large" id="summaryCard">
-              <h3 class="dashboard__card-title">Summary</h3>
-              <p class="dashboard__card-content" id="summaryContent">Summary of all sensors will appear here.</p>
-            </div>
-          </div>
-        </section>
-      </div>
-    </main>
+    
 
     <!-- Real time and date script -->
     <script>
