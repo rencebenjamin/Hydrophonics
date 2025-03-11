@@ -81,3 +81,37 @@
   font-size: 0.8rem;
 }
 
+
+/* Semi-Responsive Adjustments */
+@media (max-width: 1500px) {
+  /* Adjust the grid layout to make cards smaller and centered */
+  .dashboard__cards {
+    grid-template-columns: repeat(4, minmax(120px, 300px)); /* 4 columns with consistent size */
+    justify-content: center; /* Center the grid items */
+    margin: auto; /* Center the whole grid within the parent */
+    max-width: calc(300px * 4 + 60px); /* Adjust max-width based on card size and gap */
+  }
+  /* Card styling */
+.card {
+  height: 500px; /* Set a fixed height to maintain shape */
+  max-height: 500px; /* Optional: prevent it from growing too much */
+}
+.canvas {
+  width: 100%;
+  height: 200px; 
+}
+.sensor-logo {
+  width: 100px;
+  height: 100px;
+  margin: 0.5rem 0;
+}
+.sensor-title {
+  font-size: 1.5rem;
+}
+
+.long-title {
+  font-size: 1rem;
+}
+
+
+}

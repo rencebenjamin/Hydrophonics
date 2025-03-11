@@ -4,29 +4,39 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Daily Sensor Details</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="icon" href="img/11.png" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/navbar.css" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/font.css" />
+
   </head>
   <body>
-    <nav class="dashboard__nav">
-      <a href="index.html"><img src="img/11.png" class="logo" /></a>
-      <h2 class="dashboard__nav-title"><a href="Hydrophonics.html">Hydroponics</a></h2>
-      <h2 class="dashboard__nav-item"><a href="Hydrophonics.html">Overview</a></h2>
-      <h2 class="dashboard__nav-item"><a href="Analytics.html">Analytics</a></h2>
-      <h2 class="dashboard__nav-item"><a href="reports.html">Reports</a></h2>
-      <h2 class="dashboard__nav-item"><a href="#settings">Settings</a></h2>
-      <div class="dashboard__datetime" id="dateTime"></div>
+    <nav class="navbar">
+      <!-- Left: Logo & Menu -->
+
+      <div class="logo">
+        <a href="#hydroponics">
+          <img src="../img/nav-logo.png" alt="Hydroponics Logo" />
+        </a>
+      </div>
+
+      <!-- Desktop Nav Links -->
+      <ul>
+        <li class="nav-item"><a href="../hydroponics.html" class="nav-link">Dashboard</a></li>
+        <li class="nav-item"><a href="../pages/analytics.html" class="nav-link">Analytics</a></li>
+        <li class="nav-item"><a href="reports.html" class="nav-link active">Reports</a></li>
+      </ul>
+
+      <!-- Right: Date & Time -->
+      <div id="dateTime" class="date-time"></div>
+      
     </nav>
 
-    <main class="dashboard__main">
-      <header class="dashboard__header">
-        <h1 id="dayTitle">Sensor Data</h1>
-      </header>
-
-      <section class="dashboard__details">
-        <div id="sensorData"></div>
-      </section>
-    </main>
+        <!-- Scripts -->
+        <script src="../js/time-date.js"></script>
+        <script src="../js/chart.js"></script>
+        <script src="../js/nav-hover.js"></script>
 
     <script>
       function getQueryParam(param) {
