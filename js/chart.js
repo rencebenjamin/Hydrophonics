@@ -54,7 +54,7 @@ function createChart(canvasId, percentage) {
 const charts = {
   phSensor: createChart("phSensor", 60),
   ecSensor: createChart("ecSensor", 75),
-  lightSensor: createChart("lightSensor", 80),
+  lightIntensitySensor: createChart("lightIntensitySensor", 80),
   tempSensor: createChart("tempSensor", 50),
   humiditySensor: createChart("humiditySensor", 40),
   totalDissolvedSolids: createChart("totalDissolvedSolids", 65),

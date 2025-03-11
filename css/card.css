@@ -1,50 +1,83 @@
+/* card.css this is where you edit the cards  */
+
 .dashboard__cards {
-    display: grid;
-    gap: 20px;
-    padding: 10px;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  }
-  
-  .card {
-    background-color: #93a267;
-    border-radius: 0.5rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-align: center;
-    height: auto;
-    min-width: 1px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem;
-  }
-  
-  .canvas {
-    width: 100%;
-    height: 150px; /* Uniform height */
-  }
-  
-  .card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
-  }
-  
-  .chart-container {
-    width: 100%; /* Ensure it doesn’t overflow */
-    margin-top: 0.5rem;
-  }
-  
-  .sensor-logo {
-    width: 50px;
-    height: 50px;
-    margin: 0.5rem 0;
-  }
-  
-  .sensor-title {
-    font-size: 1rem;
-    font-weight: bold;
-    margin-top: 0.5rem;
-    color: #fff;
-  }
-  
+  display: grid;
+  gap: 20px;
+  padding: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+}
+
+.card {
+  /* Visual */
+  background-color: #93a267;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+
+  /* Sizing */
+  height: auto;
+  min-width: 1px;
+
+  /* Layout */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  /* Spacing */
+  padding: 1rem;
+}
+
+
+.canvas {
+  width: 100%;
+  height: 150px; /* Uniform height para di sumabog */
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.chart-container {
+  width: 100%; /* Para mawala yung scroll shift */
+  margin-top: 0.5rem;
+}
+
+
+/* Sensor logo section */
+.sensor-logo {
+  width: 60px;
+  height: 60px;
+  margin: 0.5rem 0;
+}
+
+
+/* Sensor title section */
+.sensor-title {
+  /* Typography */
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  line-height: 1.2;
+
+  /* Spacing */
+  margin-top: 0.5rem;
+
+  /* Sizing */
+  height: 2.4rem; /* Ensure consistent height wag na galawin unless alam */
+
+  /* Layout */
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+
+.long-title {
+  white-space: normal;
+  word-wrap: break-word;
+  font-size: 0.8rem;
+}
+
