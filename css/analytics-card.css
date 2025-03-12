@@ -1,0 +1,92 @@
+.analytics__card {
+  /* Layout */
+  display: grid;
+  gap: 1rem;
+
+  /* Grid Configuration */
+  grid-template-columns: repeat(3, 1fr); /* The main container with 3 equal-width columns */
+  grid-template-rows: 200px 300px; /* First row for the top card, second row for the bottom cards */
+}
+
+.top-card {
+  /* Layout */
+  grid-column: 2 / 3; /* Centered in the middle column */
+  height: 200px;
+  display: flex;
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+
+  /* Typography */
+  font-size: 1.5rem;
+  text-align: center;
+  color: white;
+
+  /* Visual */
+  background-color: #93a267;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Make the bottom cards container span all columns and have its own grid, so the bottom cards have its own grid */
+.bottom__cards {
+  /* Layout */
+  display: grid;
+  gap: 1rem;
+  grid-column: 1 / 4; /* Span all 3 columns from the parent grid */
+  grid-template-columns: repeat(6, 1fr); /* Create 6 equal-width columns for the cards */
+  align-items: stretch; /* Make all grid items stretch to fill the height */
+}
+
+/* 
+    * trial lang 
+
+.small-card {
+  height: 150px;
+  background-color: #333;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.5rem;
+  font-size: 1.2rem;
+} */
+
+.small-card {
+  /* Visual */
+  background-color: #93a267;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  color: white;
+
+  /* Sizing */
+  height: 100%;
+  min-width: 1px;
+
+  /* Layout */
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  justify-content: flex-start; /* Align items at the top */
+  align-items: center; /* Center horizontally */
+
+  /* Spacing */
+  padding: 0.5rem; /* Add padding to give some space around the title */
+}
+
+/* Hover Effect */
+.card-hover:hover {
+  transform: scale(1.05); /* Slightly increase size on hover */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Deeper shadow on hover */
+}
+
+.analytics-card-title {
+  margin: 0; /* Remove default margin from the <h3> */
+  font-size: 1.5rem;
+}
+
+.analytics-card-title {
+  margin: 0; /* Remove default margin from the <h3> */
+  font-size: 1.5rem;
+}

@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sensor Dashboard</title>
     <link rel="stylesheet" href="styles.css" />
-    <link rel="icon" href="img\11.png" />
 
     <!-- CSS -->
     <link rel="stylesheet" href="../css/navbar.css" />
     <link rel="stylesheet" href="../css/main.css" />
     <link rel="stylesheet" href="../css/font.css" />
+    <link rel="stylesheet" href="../css/analytics-card.css" />
   </head>
 
   <body>
@@ -32,191 +32,37 @@
 
       <!-- Right: Date & Time -->
       <div id="dateTime" class="date-time"></div>
-      
     </nav>
 
     <!-- Main Content -->
-    <main>
-      <header class="text-center">
-        <h3>REAL-TIME MONITORING AND PREDICTIONS</h3>
-
-      </header>
-      <header class="dashboard__header">
-        <h1 class="dashboard__greeting"></h1>
-        <div class="dashboard__card_today grid-container" id="Monday" onclick="showDetails('Monday')">
-          <div class="grid-item" style="margin-right: -100px">
-            <h5 style="font-size: 125px">24</h5>
-            <h3 class="dashboard__card-title" style="font-size: 20px">MONDAY</h3>
-          </div>
-          <div class="grid-item">
-            <center>
-              <div style="width: 2px; height: 240px; background-color: whitesmoke; padding: 0px; margin-left: 0px"></div>
-            </center>
-          </div>
-          <div class="grid-item" style="margin-left: -100px">
-            <p class="dashboard__card-content"><strong>Overall Status: </strong> <span id="phLevel">Normal</span></p>
-            <div class="" id="phDetails">
-              <p><strong>pH Status:</strong> <span id="phNitrogen">Normal</span></p>
-              <p>
-                <strong>EC Status:</strong>
-                <span id="phPhosphorus">Normal</span>
-              </p>
-            </div>
-          </div>
-        </div>
-        <h1 class="dashboard__greeting"></h1>
-      </header>
-      <!-- pH Sensor -->
-
-      <!-- Cards Section -->
-      <section class="flex flex-wrap justify-center gap-3">
-        <!-- EC Sensor -->
-        <div class="dashboard__card_small container" id="Tuesday" onclick="showDetails('Tuesday')">
-          <div class="row">
-            <h6>25</h6>
-            <h3 class="dashboard__card-title">TUESDAY</h3>
-          </div>
-          <div class="row">
-            <p class="dashboard__card-content">
-              <center>
-                <div style="width: 90%; height: 1px; background-color: whitesmoke"></div>
-              </center>
-              <br />
-              <strong>Overall Status: </strong> <span id="ecLevel">Normal</span>
-            </p>
-            <div class="" id="ecDetails">
-              <p><strong>pH Status:</strong> <span id="phNitrogen">Normal</span></p>
-              <p>
-                <strong>EC Status:</strong>
-                <span id="phPhosphorus">Normal</span>
-              </p>
-            </div>
-          </div>
+    <main class="dashboard__main">
+      <section class="analytics__card">
+        <div class="top-card card-hover">
+          <h3 class="analytics-card-title">Monday</h3>
         </div>
 
-        <!-- Light Intensity Sensor -->
-        <div class="dashboard__card_small container" id="Wednesday" onclick="showDetails('Wednesday')">
-          <div class="row">
-            <h6>26</h6>
-            <h3 class="dashboard__card-title">WEDNESDAY</h3>
+        <div class="bottom__cards">
+          <div class="small-card card-hover">
+            <h3 class="analytics-card-title">Tuesday</h3>
           </div>
-          <div class="row">
-            <p class="dashboard__card-content">
-              <center>
-                <div style="width: 90%; height: 1px; background-color: whitesmoke"></div>
-              </center>
-              <br />
-              <strong>Overall Status: </strong>
-              <span id="ecLevel">Below Normal</span>
-            </p>
-            <div class="" id="lightDetails">
-              <p><strong>pH Status:</strong> <span id="phNitrogen">Normal</span></p>
-              <p>
-                <strong>EC Status:</strong>
-                <span id="phPhosphorus">Below Normal</span>
-              </p>
-            </div>
+          <div class="small-card card-hover">
+            <h3 class="analytics-card-title">Wednesday</h3>
           </div>
-        </div>
-
-        <!-- Temperature Sensor -->
-        <div class="dashboard__card_small container" id="Thursday" onclick="showDetails('Thursday')">
-          <div class="row">
-            <h6>27</h6>
-            <h3 class="dashboard__card-title">THURSDAY</h3>
+          <div class="small-card card-hover">
+            <h3 class="analytics-card-title">Thursday</h3>
           </div>
-          <div class="row">
-            <p class="dashboard__card-content">
-              <center>
-                <div style="width: 90%; height: 1px; background-color: whitesmoke"></div>
-              </center>
-              <br />
-              <strong>Overall Status: </strong>
-              <span id="ecLevel">Below Normal</span>
-            </p>
-            <div class="" id="ecDetails">
-              <p>
-                <strong>pH Status:</strong>
-                <span id="phNitrogen">Below Normal</span>
-              </p>
-              <p>
-                <strong>EC Status:</strong>
-                <span id="phPhosphorus">Below Normal</span>
-              </p>
-            </div>
+          <div class="small-card card-hover">
+            <h3 class="analytics-card-title">Friday</h3>
           </div>
-        </div>
-
-        <!-- Humidity Sensor -->
-        <div class="dashboard__card_small container" id="Friday" onclick="showDetails('Friday')">
-          <div class="row">
-            <h6>28</h6>
-            <h3 class="dashboard__card-title">FRIDAY</h3>
+          <div class="small-card card-hover">
+            <h3 class="analytics-card-title">Saturday</h3>
           </div>
-          <div class="row">
-            <p class="dashboard__card-content">
-              <center>
-                <div style="width: 90%; height: 1px; background-color: whitesmoke"></div>
-              </center>
-              <br />
-              <strong>Overall Status: </strong>
-              <span id="ecLevel">Not Normal</span>
-            </p>
-            <div class="" id="ecDetails">
-              <p><strong>pH Status:</strong> <span id="phNitrogen">Poor pH</span></p>
-              <p>
-                <strong>EC Status:</strong>
-                <span id="phPhosphorus">Poor EC</span>
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Dissolved Oxygen Sensor -->
-        <div class="dashboard__card_small container" id="Saturday" onclick="showDetails('Saturday')">
-          <div class="row">
-            <h6>29</h6>
-            <h3 class="dashboard__card-title">SATURDAY</h3>
-          </div>
-          <div class="row">
-            <p class="dashboard__card-content">
-              <center>
-                <div style="width: 90%; height: 1px; background-color: whitesmoke"></div>
-              </center>
-              <br />
-              <strong>PPM Level:</strong> <span id="doLevel">300</span>
-            </p>
-            <div class="" id="doDetails">
-              <p><strong>min:</strong> <span id="doSaturation">550</span></p>
-              <p><strong>max:</strong> <span id="doTemp">850</span></p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Water Temperature Sensor -->
-        <div class="dashboard__card_small container" id="Sunday" onclick="showDetails('Sunday')">
-          <div class="row">
-            <h6>30</h6>
-            <h3 class="dashboard__card-title">SUNDAY</h3>
-          </div>
-          <div class="row">
-            <p class="dashboard__card-content">
-              <center>
-                <div style="width: 90%; height: 1px; background-color: whitesmoke"></div>
-              </center>
-              <br />
-              <strong>Water Temp:</strong> <span id="waterTempValue">20°C</span>
-            </p>
-            <div class="" id="waterTempDetails">
-              <p><strong>Min:</strong> <span id="waterTempMin">18°C</span></p>
-              <p><strong>Max:</strong> <span id="waterTempMax">22°C</span></p>
-            </div>
+          <div class="small-card card-hover">
+            <h3 class="analytics-card-title">Sunday</h3>
           </div>
         </div>
       </section>
     </main>
-
-
 
     <!-- Scripts -->
     <script src="../js/time-date.js"></script>
