@@ -29,6 +29,31 @@
   padding: 1rem;
 }
 
+.card.large {
+  grid-column: span 4; /* Since we have 8 cards on top, we will make the large cards take up 4 cards for space */
+}
+
+.large.title{
+    /* Typography */
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+  
+    /* Sizing */
+    height: 2rem;
+  
+    /* Layout */
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+/* Arkkun */
+.arkkun img{
+  width: 500px;
+  height: 400px;
+}
+
 
 .canvas {
   width: 100%;

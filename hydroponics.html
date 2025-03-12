@@ -33,10 +33,9 @@
 
       <!-- Right: Date & Time -->
       <div id="dateTime" class="date-time"></div>
-      
     </nav>
 
-    <h3 class="dashboard__greeting">REAL-TIME MONITORING AND PREDICTIONS</h3>
+    <h3 class="dashboard__greeting">REAL-TIME MONITORING</h3>
 
     <!-- main content goes here -->
     <main class="dashboard__main">
@@ -105,7 +104,6 @@
           <h3 class="sensor-title long-title">Temperature Sensor</h3>
         </div>
 
-
         <!-- Humidity Sensor -->
         <div class="card">
           <!-- Canvas Section -->
@@ -121,7 +119,7 @@
           <!-- Title Section -->
           <h3 class="sensor-title">Humidity Sensor</h3>
         </div>
-        
+
         <!-- Total Dissolved Solids Sensor -->
         <div class="card">
           <!-- Canvas Section -->
@@ -137,7 +135,6 @@
           <!-- Title Section -->
           <h3 class="sensor-title long-title">Total Dissolved Solids</h3>
         </div>
-
 
         <!-- Water Temperature Sensor -->
         <div class="card">
@@ -155,7 +152,6 @@
           <h3 class="sensor-title long-title">Water Temperature Sensor</h3>
         </div>
 
-
         <!-- Water Level Sensor -->
         <div class="card">
           <!-- Canvas Section -->
@@ -171,16 +167,44 @@
           <!-- Title Section -->
           <h3 class="sensor-title long-title">Water Temperature Sensor</h3>
         </div>
+
+        <!-- Large card 1 -->
+
+        <div class="large card">
+          <!-- Title -->
+          <h3 class="large title">SENSOR GRAPH</h3>
+          <!-- Grafana Container -->
+          <div class="grafana__container">
+            <iframe
+              id="grafanaFrame"
+              src="http://localhost:3000/d-solo/becswr8bew2rkf/test-dashboard?orgId=1&from=1740116196107&to=1740116496107&timezone=browser&refresh=5s&theme=light&panelId=1&__feature.dashboardSceneSolo"
+              width="450"
+              height="200"
+              frameborder="0"
+              class="grafana-iframe"
+            >
+            </iframe>
+          </div>
+          <button class="refresh-button" onclick="resetGrafana()">Reset Graph</button>
+        </div>
+
+        <!-- Large card 2 -->
+
+        <div class="large card">
+          <!-- Title -->
+          <h3 class="large title">Lemme know anong ilalagay dito</h3>
+
+          <div class="arkkun">
+            <img src="azz.jpg" alt="Azura Arkkun Janjan Kapitan-D ICanThoughtYou" />
+          </div>
+        </div>
       </section>
-
-      
-
     </main>
 
     <!-- Scripts -->
     <script src="js/time-date.js"></script>
     <script src="js/chart.js"></script>
     <script src="js/nav-hover.js"></script>
-
+    <script src="js/reset-graph.js"></script>
   </body>
 </html>
